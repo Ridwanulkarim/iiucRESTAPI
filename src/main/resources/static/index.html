@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIUC Course Portal — Academic Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/img/iiuc-logo.png" />
+  <link rel="apple-touch-icon" href="/img/iiuc-logo.png" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <!-- Global App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-logo">
+          <img src="/img/iiuc-logo.png" alt="IIUC Crest Logo" class="logo-img" />
+        </div>
+        <div class="brand-text">
+          <h1>IIUC Course Portal</h1>
+          <span class="brand-subtitle">International Islamic University Chittagong</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- API Live Status Indicator -->
+        <div class="api-status-badge" id="apiStatusBadge" title="API Status">
+          <span class="status-pulse"></span>
+          <span class="status-text" id="apiStatusText">Checking API...</span>
+        </div>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="themeToggleBtn" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg id="themeIconSun" class="theme-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg id="themeIconMoon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+
+        <!-- New Course Button -->
+        <button id="openAddModalBtn" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Add Course</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Hero / Metrics Dashboard -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Total Courses</span>
+          <span class="metric-value" id="statTotalCourses">0</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"></circle>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+          </svg>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Total Credit Hours</span>
+          <span class="metric-value" id="statTotalCredits">0.0</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect>
+            <path d="M9 22v-4h6v4"></path>
+            <path d="M8 6h.01"></path>
+            <path d="M16 6h.01"></path>
+            <path d="M12 6h.01"></path>
+            <path d="M12 10h.01"></path>
+            <path d="M12 14h.01"></path>
+            <path d="M16 10h.01"></path>
+            <path d="M16 14h.01"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M8 14h.01"></path>
+          </svg>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Departments</span>
+          <span class="metric-value" id="statDepartments">0</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="metric-info">
+          <span class="metric-label">Instructors</span>
+          <span class="metric-value" id="statInstructors">0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter, Search & View Controls Bar -->
+    <section class="control-panel">
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search by code, title, instructor, department..." 
+          autocomplete="off"
+        />
+        <button id="clearSearchBtn" class="clear-btn hidden" title="Clear search">×</button>
+      </div>
+
+      <div class="filters-group">
+        <!-- Department Filter -->
+        <select id="filterDept" class="filter-select" aria-label="Filter by department">
+          <option value="ALL">All Departments</option>
+          <optgroup label="Faculty of Science and Engineering (FSE)">
+            <option value="Computer Science and Engineering (CSE)">Computer Science &amp; Eng (CSE)</option>
+            <option value="Computer and Communication Engineering (CCE)">Computer &amp; Comm Eng (CCE)</option>
+            <option value="Electrical and Electronic Engineering (EEE)">Electrical &amp; Electronic Eng (EEE)</option>
+            <option value="Electronic and Telecommunication Engineering (ETE)">Electronic &amp; Telecom Eng (ETE)</option>
+            <option value="Civil Engineering (CE)">Civil Engineering (CE)</option>
+            <option value="Pharmacy">Pharmacy</option>
+          </optgroup>
+          <optgroup label="Faculty of Arts and Humanities">
+            <option value="English Language and Literature">English Language &amp; Literature</option>
+            <option value="Arabic Language and Literature">Arabic Language &amp; Literature</option>
+          </optgroup>
+          <optgroup label="Faculty of Shariah and Islamic Studies">
+            <option value="Qur'anic Sciences and Islamic Studies">Qur'anic Sciences &amp; Islamic Studies</option>
+            <option value="Da'wah and Islamic Studies">Da'wah &amp; Islamic Studies</option>
+            <option value="Science of Hadith and Islamic Studies">Science of Hadith &amp; Islamic Studies</option>
+          </optgroup>
+          <optgroup label="Faculty of Business Studies">
+            <option value="Business Administration">Business Administration</option>
+            <option value="Finance">Finance</option>
+          </optgroup>
+          <optgroup label="Faculty of Social Sciences">
+            <option value="Economics and Banking">Economics &amp; Banking</option>
+          </optgroup>
+          <optgroup label="Faculty of Law">
+            <option value="Law and Land Management">Law &amp; Land Management</option>
+          </optgroup>
+        </select>
+
+        <!-- Course Type Filter -->
+        <select id="filterType" class="filter-select" aria-label="Filter by course type">
+          <option value="ALL">All Types</option>
+          <option value="Theory">Theory</option>
+          <option value="Lab">Lab</option>
+        </select>
+
+        <!-- Semester Filter -->
+        <select id="filterSemester" class="filter-select" aria-label="Filter by semester">
+          <option value="ALL">All Semesters</option>
+          <option value="0th">0th / Prep Semester</option>
+          <option value="1st">1st Semester</option>
+          <option value="2nd">2nd Semester</option>
+          <option value="3rd">3rd Semester</option>
+          <option value="4th">4th Semester</option>
+          <option value="5th">5th Semester</option>
+          <option value="6th">6th Semester</option>
+          <option value="7th">7th Semester</option>
+          <option value="8th">8th Semester</option>
+        </select>
+
+        <!-- View Mode Switcher -->
+        <div class="view-switch-group">
+          <button id="viewGridBtn" class="icon-btn active" title="Grid View" aria-label="Switch to grid view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </button>
+          <button id="viewTableBtn" class="icon-btn" title="Table View" aria-label="Switch to table view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Reload Data Button -->
+        <button id="refreshBtn" class="icon-btn" title="Refresh courses" aria-label="Refresh courses">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6"></path>
+            <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Course Content Container -->
+    <section class="catalog-section">
+      <!-- Loading State -->
+      <div id="loadingState" class="state-container hidden">
+        <div class="spinner"></div>
+        <p>Loading course catalog from API...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="state-container hidden">
+        <div class="empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+        </div>
+        <h3>No Courses Found</h3>
+        <p id="emptyStateMessage">No courses match your current search or filter criteria.</p>
+        <button id="resetFiltersBtn" class="btn btn-secondary">Reset Filters</button>
+      </div>
+
+      <!-- Grid Cards View -->
+      <div id="coursesGridView" class="courses-grid">
+        <!-- Dynamic Course Cards will be rendered here -->
+      </div>
+
+      <!-- Table View -->
+      <div id="coursesTableView" class="table-wrapper hidden">
+        <table class="courses-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Code</th>
+              <th>Course Title</th>
+              <th>Credits</th>
+              <th>Type</th>
+              <th>Prerequisite</th>
+              <th>Dept</th>
+              <th>Semester</th>
+              <th>Instructor</th>
+              <th class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="coursesTableBody">
+            <!-- Dynamic Table Rows will be rendered here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add / Edit Course Modal Dialog (Using modern <dialog closedby="any">) -->
+  <dialog id="courseDialog" class="modal-dialog" closedby="any" aria-labelledby="dialogTitle">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <div class="dialog-header-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+              <path d="M6 6h10"></path>
+              <path d="M6 10h10"></path>
+            </svg>
+          </div>
+          <h2 id="dialogTitle">Add New Course</h2>
+        </div>
+        <button id="closeDialogBtn" class="icon-btn-ghost" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="courseForm" class="dialog-form" novalidate>
+        <input type="hidden" id="courseIdField" name="courseId" />
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="courseCode">Course Code <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="courseCode" 
+              name="courseCode" 
+              placeholder="e.g. CSE-1201" 
+              required 
+              autocomplete="off"
+            />
+            <span class="field-error" id="courseCodeError"></span>
+          </div>
+
+          <div class="form-group flex-1">
+            <label for="courseCredit">Credit Hours <span class="required">*</span></label>
+            <input 
+              type="number" 
+              id="courseCredit" 
+              name="courseCredit" 
+              placeholder="e.g. 3.0" 
+              step="0.5" 
+              min="0.5" 
+              max="10.0" 
+              required 
+            />
+            <span class="field-error" id="courseCreditError"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="courseTitle">Course Title <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="courseTitle" 
+            name="courseTitle" 
+            placeholder="e.g. Object Oriented Programming" 
+            required 
+            autocomplete="off"
+          />
+          <span class="field-error" id="courseTitleError"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="courseType">Course Type <span class="required">*</span></label>
+            <select id="courseType" name="courseType" required>
+              <option value="Theory">Theory</option>
+              <option value="Lab">Lab</option>
+            </select>
+          </div>
+
+          <div class="form-group flex-1">
+            <label for="semesterOffered">Semester Offered <span class="required">*</span></label>
+            <select id="semesterOffered" name="semesterOffered" required>
+              <option value="0th">0th / Prep Semester</option>
+              <option value="1st">1st Semester</option>
+              <option value="2nd">2nd Semester</option>
+              <option value="3rd">3rd Semester</option>
+              <option value="4th">4th Semester</option>
+              <option value="5th">5th Semester</option>
+              <option value="6th">6th Semester</option>
+              <option value="7th">7th Semester</option>
+              <option value="8th">8th Semester</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="deptName">Department <span class="required">*</span></label>
+            <select id="deptName" name="deptName" required>
+              <option value="" disabled selected>Select Department</option>
+              <optgroup label="Faculty of Science and Engineering (FSE)">
+                <option value="Computer Science and Engineering (CSE)">Computer Science and Engineering (CSE)</option>
+                <option value="Computer and Communication Engineering (CCE)">Computer and Communication Engineering (CCE)</option>
+                <option value="Electrical and Electronic Engineering (EEE)">Electrical and Electronic Engineering (EEE)</option>
+                <option value="Electronic and Telecommunication Engineering (ETE)">Electronic and Telecommunication Engineering (ETE)</option>
+                <option value="Civil Engineering (CE)">Civil Engineering (CE)</option>
+                <option value="Pharmacy">Pharmacy</option>
+              </optgroup>
+              <optgroup label="Faculty of Arts and Humanities">
+                <option value="English Language and Literature">English Language and Literature</option>
+                <option value="Arabic Language and Literature">Arabic Language and Literature</option>
+              </optgroup>
+              <optgroup label="Faculty of Shariah and Islamic Studies">
+                <option value="Qur'anic Sciences and Islamic Studies">Qur'anic Sciences and Islamic Studies</option>
+                <option value="Da'wah and Islamic Studies">Da'wah and Islamic Studies</option>
+                <option value="Science of Hadith and Islamic Studies">Science of Hadith and Islamic Studies</option>
+              </optgroup>
+              <optgroup label="Faculty of Business Studies">
+                <option value="Business Administration">Business Administration</option>
+                <option value="Finance">Finance</option>
+              </optgroup>
+              <optgroup label="Faculty of Social Sciences">
+                <option value="Economics and Banking">Economics and Banking</option>
+              </optgroup>
+              <optgroup label="Faculty of Law">
+                <option value="Law and Land Management">Law and Land Management</option>
+              </optgroup>
+            </select>
+            <span class="field-error" id="deptNameError"></span>
+          </div>
+
+          <div class="form-group flex-1">
+            <label for="instructor">Instructor Name <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="instructor" 
+              name="instructor" 
+              placeholder="e.g. Dr. Shamsul Arefin" 
+              required 
+              autocomplete="off"
+            />
+            <span class="field-error" id="instructorError"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prerequisite">Prerequisite Course Code</label>
+          <input 
+            type="text" 
+            id="prerequisite" 
+            name="prerequisite" 
+            placeholder="e.g. CSE-1121 (leave blank if none)" 
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="dialog-actions">
+          <button type="button" id="cancelDialogBtn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" id="saveCourseBtn" class="btn btn-primary">
+            <span id="saveBtnSpinner" class="btn-spinner hidden"></span>
+            <span id="saveBtnText">Save Course</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Delete Confirmation Dialog (Using modern <dialog closedby="any">) -->
+  <dialog id="deleteDialog" class="modal-dialog modal-dialog-sm" closedby="any" aria-labelledby="deleteDialogTitle">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <div class="dialog-header-icon icon-danger">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18"></path>
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+              <line x1="10" y1="11" x2="10" y2="17"></line>
+              <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+          </div>
+          <h2 id="deleteDialogTitle">Delete Course</h2>
+        </div>
+      </div>
+
+      <div class="dialog-body">
+        <p>Are you sure you want to permanently remove this course?</p>
+        <div class="delete-target-card" id="deleteCourseTarget"></div>
+        <p class="text-sm text-muted">This action will invoke <code>DELETE /api/courses/{id}</code> on the server.</p>
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" id="cancelDeleteBtn" class="btn btn-secondary">Cancel</button>
+        <button type="button" id="confirmDeleteBtn" class="btn btn-danger">
+          <span id="deleteBtnSpinner" class="btn-spinner hidden"></span>
+          <span id="deleteBtnText">Delete Course</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Floating Toast Notifications -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- App JavaScript -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
