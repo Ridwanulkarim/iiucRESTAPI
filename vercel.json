@@ -1,22 +1,10 @@
 {
-  "version": 2,
   "outputDirectory": "src/main/resources/static",
   "cleanUrls": true,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/courses/(?<id>[^/]+)",
-      "dest": "/api/courses.js?id=$id"
-    },
-    {
-      "src": "/api/courses",
-      "dest": "/api/courses.js"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/api/courses/:id",
+      "destination": "/api/courses?id=:id"
     }
   ]
 }

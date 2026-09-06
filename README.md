@@ -16,6 +16,15 @@
   <img src="https://img.shields.io/badge/Total%20Courses-1%2C113-success" alt="Courses" />
 </p>
 
+<p align="center">
+  <a href="https://iiuccourse-restapi.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20App-iiuccourse--restapi.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live on Vercel" />
+  </a>
+  <a href="https://ridwanulkarim.github.io/iiucRESTAPI/" target="_blank">
+    <img src="https://img.shields.io/badge/Mirror-GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages Mirror" />
+  </a>
+</p>
+
 ---
 
 ## 🌟 Overview
@@ -66,8 +75,9 @@ It contains complete, verified semester-by-semester curriculums for **15 academi
 ---
 
 ## ⚡ Deploy on Vercel
+- **Live Production URL**: 👉 **[https://iiuccourse-restapi.vercel.app/](https://iiuccourse-restapi.vercel.app/)**
 
-Deploy this full project directly to Vercel with one click:
+Deploy this project directly to your own Vercel account with one click:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRidwanulkarim%2FiiucRESTAPI)
 
