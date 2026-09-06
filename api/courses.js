@@ -1,4 +1,4 @@
-const courses = require('./courses.json');
+const courses = require('./_data/courses.json');
 
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true);
