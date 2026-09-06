@@ -65,7 +65,21 @@ It contains complete, verified semester-by-semester curriculums for **15 academi
 
 ---
 
-## 🚀 Quick Start
+## ⚡ Deploy on Vercel
+
+Deploy this full project directly to Vercel with one click:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRidwanulkarim%2FiiucRESTAPI)
+
+### Or Deploy from Vercel Dashboard:
+1. Go to [vercel.com/new](https://vercel.com/new).
+2. Connect your GitHub account and import **`Ridwanulkarim/iiucRESTAPI`**.
+3. Vercel automatically configures the project using [`vercel.json`](./vercel.json) (static frontend + `/api/courses` serverless REST API).
+4. Click **Deploy** to go live in seconds!
+
+---
+
+## 🚀 Local Quick Start
 
 ### Prerequisites
 - Java JDK 17 or 21+
