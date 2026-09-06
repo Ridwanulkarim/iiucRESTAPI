@@ -253,13 +253,22 @@ async function fetchCourses() {
     state.courses = Array.isArray(data) ? data : [];
     setApiStatus(true, `API Connected (${state.courses.length} courses)`);
   } catch (error) {
-    console.warn('Backend API not reachable at /api/courses, using local demo catalog:', error);
-    // If backend isn't ready or user runs standalone HTML, use realistic fallback
-    if (state.courses.length === 0) {
-      state.courses = [...FALLBACK_COURSES];
+    console.warn('Backend API not reachable at /api/courses, attempting static data catalog:', error);
+    try {
+      const staticRes = await fetch('data/courses.json').catch(() => fetch('/data/courses.json'));
+      if (staticRes && staticRes.ok) {
+        const staticData = await staticRes.json();
+        state.courses = Array.isArray(staticData) ? staticData : [];
+        setApiStatus(true, `Catalog Loaded (${state.courses.length} courses)`);
+      } else {
+        throw new Error('Static catalog file not found');
+      }
+    } catch (e2) {
+      if (state.courses.length === 0) {
+        state.courses = [...FALLBACK_COURSES];
+      }
+      setApiStatus(false, 'API Disconnected (Demo Mode)');
     }
-    setApiStatus(false, 'API Disconnected (Demo Mode)');
-    showToast('Cannot reach /api/courses. Displaying demo courses.', 'info');
   } finally {
     setLoading(false);
     populateDepartmentOptions();
