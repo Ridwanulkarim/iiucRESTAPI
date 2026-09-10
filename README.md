@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Spring%20Boot-3.5-brightgreen?logo=springboot" alt="Spring Boot" />
   <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk" alt="Java 21" />
   <img src="https://img.shields.io/badge/Architecture-REST%20API-blue" alt="REST API" />
-  <img src="https://img.shields.io/badge/Frontend-HTML5%20%7C%20CSS3%20%7C%20JS-blueviolet" alt="Frontend" />
+  <img src="https://img.shields.io/badge/Frontend-HTML5%20%7C%20TailwindCSS%20%7C%20JS-38B2AC?logo=tailwindcss" alt="Frontend" />
   <img src="https://img.shields.io/badge/Total%20Courses-1%2C113-success" alt="Courses" />
 </p>
 
