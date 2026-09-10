@@ -121,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initTheme() {
   document.documentElement.setAttribute('data-theme', state.theme);
+  document.documentElement.classList.toggle('dark', state.theme === 'dark');
   updateThemeIcons();
 }
 
@@ -128,6 +129,7 @@ function toggleTheme() {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   localStorage.setItem('iiuc_theme', state.theme);
   document.documentElement.setAttribute('data-theme', state.theme);
+  document.documentElement.classList.toggle('dark', state.theme === 'dark');
   updateThemeIcons();
 }
 
