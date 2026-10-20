@@ -5,15 +5,16 @@
 <h1 align="center">IIUC Course Portal — Academic Management System</h1>
 
 <p align="center">
-  <b>A modern full-stack academic management system and RESTful API for International Islamic University Chittagong (IIUC)</b>
+  <b>A modern, enterprise-ready full-stack academic management platform and RESTful API for International Islamic University Chittagong (IIUC)</b>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Spring%20Boot-3.5-brightgreen?logo=springboot" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk" alt="Java 21" />
-  <img src="https://img.shields.io/badge/Architecture-REST%20API-blue" alt="REST API" />
-  <img src="https://img.shields.io/badge/Frontend-HTML5%20%7C%20TailwindCSS%20%7C%20JS-38B2AC?logo=tailwindcss" alt="Frontend" />
-  <img src="https://img.shields.io/badge/Total%20Courses-1%2C113-success" alt="Courses" />
+  <a href="https://spring.io/projects/spring-boot"><img src="https://img.shields.io/badge/Spring%20Boot-3.5.9-brightgreen?logo=springboot&logoColor=white" alt="Spring Boot" /></a>
+  <a href="https://www.oracle.com/java/"><img src="https://img.shields.io/badge/Java-21%20LTS-orange?logo=openjdk&logoColor=white" alt="Java 21" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Architecture-RESTful%20API-blue?logo=fastapi&logoColor=white" alt="REST API" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Frontend-TailwindCSS%20%7C%20HTML5%20%7C%20JS-38B2AC?logo=tailwindcss&logoColor=white" alt="Frontend" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Curriculum-1%2C113%20Courses-success?logo=buffer&logoColor=white" alt="Courses" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
 </p>
 
 <p align="center">
@@ -27,15 +28,104 @@
 
 ---
 
-## 🌟 Overview
+## 🌟 Executive Summary
 
-The **IIUC Course Portal** is a production-ready, full-stack course management platform built with a high-performance **Spring Boot** backend and a responsive, modern **HTML5/CSS3/JavaScript** frontend.
+The **IIUC Course Portal** is an all-inclusive academic management platform designed to streamline course discovery, curriculum tracking, and degree planning across **International Islamic University Chittagong (IIUC)**. 
 
-It contains complete, verified semester-by-semester curriculums for **15 academic departments** across **6 faculties** of IIUC, spanning over **1,113 accredited courses** with credit hours, course typing (`Theory` vs `Lab`), prerequisites, and semester offerings.
+Built with a high-performance **Java 21 / Spring Boot 3** backend and a reactive **HTML5 / Tailwind CSS / Vanilla JavaScript** frontend, the system encapsulates verified semester curriculums across **15 academic departments** within **6 faculties**, covering over **1,113 accredited courses** with credits, theory/lab classifications, and prerequisite tracking.
+
+---
+
+## 🏛️ System Architecture
+
+The application adopts a decoupled, multi-tier client-server architecture designed for high availability, low latency, and dual deployment flexibility (Enterprise Spring Boot JVM or Edge Serverless Function).
+
+### High-Level Multi-Tier Architecture Diagram
+
+```mermaid
+flowchart TB
+    subgraph ClientLayer["🖥️ Presentation Layer (Client Tier)"]
+        UI["Modern Web Application (SPA)<br/>HTML5 • Tailwind CSS • Modern Vanilla JS"]
+        Views["Dual Presentation Views<br/>• Responsive Card Grid<br/>• Dense Tabular View"]
+        ClientEngine["Client-Side State Engine<br/>• Live Multi-criteria Filter<br/>• Real-Time Metric Aggregator<br/>• Theme Engine (Light / Dark)"]
+    end
+
+    subgraph GatewayLayer["🌐 Gateway & Deployment Tier"]
+        CloudDeploy["Cloud Edge (Vercel)<br/>Global CDN • Static Edge Cache"]
+        LocalServer["Local Environment<br/>Embedded Apache Tomcat :8080"]
+    end
+
+    subgraph BackendLayer["⚙️ Application & API Tier"]
+        subgraph SpringBoot["Spring Boot Backend (Production Enterprise)"]
+            Dispatcher["Spring Web DispatcherServlet"]
+            Controller["CourseController.java<br/>REST Endpoints: /api/courses"]
+            Service["CourseService.java<br/>• Academic Business Logic<br/>• Catalog Seeding (1,113 Courses)<br/>• In-Memory CRUD Management"]
+            Model["Course.java Entity Model"]
+        end
+
+        subgraph ServerlessNode["Serverless API (Cloud Edge)"]
+            VercelFunc["api/courses.js<br/>Node.js Serverless Function"]
+        end
+    end
+
+    subgraph DataLayer["💾 Data & Catalog Storage Tier"]
+        InMemoryData[("In-Memory Course Store<br/>1,113 Pre-seeded Courses<br/>15 Departments • 6 Faculties")]
+        JSONCatalog[("Standalone courses.json<br/>Static Data Fallback")]
+        FutureDB[("Roadmap Phase 2:<br/>PostgreSQL / MySQL + JPA")]
+    end
+
+    UI --> Views
+    UI --> ClientEngine
+    Views -->|HTTP / Fetch REST API| GatewayLayer
+    
+    LocalServer --> Dispatcher
+    Dispatcher --> Controller
+    Controller --> Service
+    Service --> Model
+    Service --> InMemoryData
+
+    CloudDeploy --> VercelFunc
+    VercelFunc --> JSONCatalog
+    
+    Service -.->|Future JPA Migration| FutureDB
+
+    style ClientLayer fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0f172a
+    style GatewayLayer fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#0f172a
+    style BackendLayer fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a
+    style DataLayer fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#0f172a
+```
+
+### Request-Response Lifecycle (Sequence Diagram)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 Student / Faculty
+    participant Browser as 🌐 Web UI (SPA)
+    participant Controller as 🎮 CourseController (/api/courses)
+    participant Service as 💼 CourseService
+    participant Store as 🗄️ Course Store (1,113 Courses)
+
+    User->>Browser: Selects Department / Semester / Filter
+    Browser->>Controller: GET /api/courses
+    activate Controller
+    Controller->>Service: getAllCourses()
+    activate Service
+    Service->>Store: Query course catalog
+    Store-->>Service: Return 1,113 Course records
+    Service-->>Controller: List<Course>
+    deactivate Service
+    Controller-->>Browser: 200 OK (JSON Payload)
+    deactivate Controller
+    Browser->>Browser: Reactive Filter & Update View
+    Browser-->>User: Renders Filtered Course Cards & Dynamic Metrics
+```
 
 ---
 
 ## 🏛️ Academic Scope & Department Breakdown
+
+The catalog incorporates the entire undergraduate curriculum of IIUC across **6 Faculties** and **15 Academic Departments**:
 
 | Faculty | Department | Total Courses | Semesters |
 | :--- | :--- | :---: | :---: |
@@ -54,77 +144,42 @@ It contains complete, verified semester-by-semester curriculums for **15 academi
 | | Finance | **59** | 1st – 8th |
 | **Faculty of Social Sciences** | Economics and Banking | **54** | 1st – 8th |
 | **Faculty of Law** | Law and Land Management | **50** | 1st – 8th |
-| **Total Academic Catalog** | **15 Departments Across 6 Faculties** | **1,113 Courses** | **0th – 8th** |
+| **Total Academic Scope** | **15 Departments Across 6 Faculties** | **1,113 Courses** | **0th – 8th** |
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- 🔍 **Real-Time Live Search**: Instant multi-criteria search filtering across course codes, titles, departments, instructors, and prerequisites.
-- 🏫 **Faculty & Department Grouping**: Multi-tier dropdown selectors organized by official IIUC faculties.
-- 🏷️ **Strict Course Classification**: Color-coded badges distinguishing **Theory** (lecture) from **Lab** (sessional, workshop, practical, viva).
-- 🎓 **Semester Filtering**: Seamlessly filter from **0th / Prep Semester** through **8th Semester**.
-- 📊 **Dynamic Live Metrics**: Instant calculation of total courses, total credit hours, active departments, and faculty counts.
-- 🗂️ **Dual Display Modes**:
-  - **Card Grid View**: Interactive visual cards with badges and quick actions.
-  - **Table View**: Compact, dense tabular layout with sortable data columns.
-- 🌓 **Dark / Light Theme**: Built-in CSS custom property theme switcher with persistent local storage.
-- ⚡ **Full CRUD Operations**: Modal dialogs for adding new courses, updating existing courses, and confirming deletions.
-- 📱 **Mobile Responsive**: Fully adaptive design optimized for phones, tablets, and desktop displays.
-
----
-
-## ⚡ Deploy on Vercel
-- **Live Production URL**: 👉 **[https://iiuccourse-restapi.vercel.app/](https://iiuccourse-restapi.vercel.app/)**
-
-Deploy this project directly to your own Vercel account with one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRidwanulkarim%2FiiucRESTAPI)
-
-### Or Deploy from Vercel Dashboard:
-1. Go to [vercel.com/new](https://vercel.com/new).
-2. Connect your GitHub account and import **`Ridwanulkarim/iiucRESTAPI`**.
-3. Vercel automatically configures the project using [`vercel.json`](./vercel.json) (static frontend + `/api/courses` serverless REST API).
-4. Click **Deploy** to go live in seconds!
+- 🔍 **Instant Live Search**: Sub-millisecond multi-attribute filtering across course codes, titles, instructors, and prerequisites.
+- 🏫 **Hierarchical Academic Grouping**: Multi-tier dropdown filtering structured by official university faculties and departments.
+- 🏷️ **Course Typing Badges**: Color-differentiated badges identifying **Theory** (lecture) vs **Lab** (sessional, practical, viva).
+- 🎓 **Semester Range Selector**: Complete progression support from **0th / Foundation Semester** through **8th Semester**.
+- 📊 **Dynamic Live Metrics**: Instant re-calculation of total courses, cumulative credit hours, and department distribution.
+- 🗂️ **Dual View Presentation**:
+  - **Card Grid View**: Visual cards with status indicators and quick-action modals.
+  - **Table View**: Compact, sortable tabular data layout.
+- 🌓 **Adaptive Theme Engine**: Built-in CSS custom property theme switcher (Dark / Light) with persistent `localStorage`.
+- ⚡ **Full CRUD Capabilities**: Modal dialogs for adding new courses, updating information, and safe deletion confirmation.
+- 📱 **Fully Responsive Layout**: Built with a mobile-first philosophy, adapting across smartphones, tablets, and widescreen desktop displays.
 
 ---
 
-## 🚀 Local Quick Start
+## 📡 RESTful API Documentation
 
-### Prerequisites
-- Java JDK 17 or 21+
-- Maven (or use the included `./mvnw` wrapper)
-- Git
+Base URL: `http://localhost:8080/api/courses` (Local) or `https://iiuccourse-restapi.vercel.app/api/courses` (Cloud)
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Ridwanulkarim/iiucRESTAPI.git
-cd iiucRESTAPI
-```
-
-### 2. Run the Application
-```bash
-./mvnw spring-boot:run
-```
-
-### 3. Open in Browser
-Visit **[http://localhost:8080](http://localhost:8080)** to access the portal.
-
----
-
-## 📡 REST API Documentation
-
-Base URL: `http://localhost:8080/api/courses`
+### Endpoints Specification
 
 | Method | Endpoint | Description | Request Body | Status Code |
 | :--- | :--- | :--- | :--- | :---: |
-| **GET** | `/api/courses` | Retrieve all courses | None | `200 OK` |
-| **GET** | `/api/courses/{id}` | Retrieve a specific course by ID | None | `200 OK` / `404` |
-| **POST** | `/api/courses` | Add a new course | Course JSON | `201 Created` |
-| **PUT** | `/api/courses/{id}` | Update an existing course | Course JSON | `200 OK` / `404` |
-| **DELETE** | `/api/courses/{id}` | Delete a course by ID | None | `200 OK` / `404` |
+| **GET** | `/api/courses` | Retrieve all 1,113 academic courses | None | `200 OK` |
+| **GET** | `/api/courses/{id}` | Retrieve specific course details by ID | None | `200 OK` / `404 Not Found` |
+| **POST** | `/api/courses` | Create a new academic course entry | Course JSON | `201 Created` |
+| **PUT** | `/api/courses/{id}` | Modify an existing course record | Course JSON | `200 OK` / `404 Not Found` |
+| **DELETE** | `/api/courses/{id}` | Delete a course record by ID | None | `200 OK` / `404 Not Found` |
 
-### Example Course JSON
+### Sample Course Payload
+
 ```json
 {
   "courseCode": "CSE-1121",
@@ -138,38 +193,125 @@ Base URL: `http://localhost:8080/api/courses`
 }
 ```
 
+### Example cURL Commands
+
+```bash
+# 1. Fetch all courses
+curl -X GET http://localhost:8080/api/courses
+
+# 2. Fetch specific course by ID
+curl -X GET http://localhost:8080/api/courses/100
+
+# 3. Create a new course
+curl -X POST http://localhost:8080/api/courses \
+  -H "Content-Type: application/json" \
+  -d '{"courseCode":"CSE-4800","courseTitle":"Cloud Computing","courseCredit":3.0,"courseType":"Theory","semesterOffered":"8th","deptName":"Computer Science and Engineering (CSE)","instructor":"Faculty Member","prerequisite":"CSE-3500"}'
+```
+
 ---
 
-## 📁 Project Structure
+## 💻 Tech Stack & Tooling
 
+| Domain | Technology / Library | Purpose |
+| :--- | :--- | :--- |
+| **Backend Framework** | Spring Boot 3.5.9 | High-performance enterprise RESTful web service |
+| **Programming Language**| Java 21 (LTS) | Core backend programming language |
+| **Build & Dependency** | Apache Maven (`mvnw`) | Build lifecycle automation and dependency management |
+| **Serverless Backend** | Node.js / Vercel Serverless | Edge execution for zero-maintenance cloud hosting |
+| **Frontend Styling** | Tailwind CSS (v3 CDN) | Modern utility-first responsive design system |
+| **Frontend Scripting** | Vanilla JavaScript (ES6+) | Reactive state management, DOM operations, Fetch API |
+| **Version Control** | Git & GitHub | Collaborative version control and deployment pipelines |
+
+---
+
+## 🚀 Local Quick Start Guide
+
+### Prerequisites
+- **Java JDK 21** or higher
+- **Git**
+- Terminal access (macOS, Linux, or Windows PowerShell)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Ridwanulkarim/iiucRESTAPI.git
+cd iiucRESTAPI
 ```
+
+### 2. Run the Application
+Use the included Maven wrapper (no pre-installed Maven required):
+```bash
+# macOS / Linux
+./mvnw spring-boot:run
+
+# Windows CMD / PowerShell
+mvnw.cmd spring-boot:run
+```
+
+### 3. Access the Portal
+Open your favorite web browser and navigate to:
+👉 **`http://localhost:8080`**
+
+---
+
+## ⚡ Deployment on Vercel
+
+The repository includes a preconfigured [`vercel.json`](./vercel.json) allowing one-click serverless deployment:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRidwanulkarim%2FiiucRESTAPI)
+
+1. Connect your GitHub repository to [Vercel](https://vercel.com).
+2. Vercel automatically detects [`vercel.json`](./vercel.json), publishing the static frontend and provisioning the `/api/courses` serverless API.
+
+---
+
+## 📂 Project Structure
+
+```text
 iiucRESTAPI/
-├── README.md
-├── pom.xml
-├── mvnw / mvnw.cmd
-└── src/
-    ├── main/
-    │   ├── java/com/iiuc/iiucAPI/
-    │   │   ├── IiucApiApplication.java       # Main Spring Boot Runner
-    │   │   ├── controller/
-    │   │   │   └── CourseController.java     # REST API Controller
-    │   │   ├── model/
-    │   │   │   └── Course.java               # Course Entity Model
-    │   │   └── service/
-    │   │       └── CourseService.java        # Ingested 1,113 Courses & Business Logic
-    │   └── resources/
-    │       ├── application.properties
-    │       └── static/                       # Frontend Web Application
-    │           ├── index.html                # Single-Page UI
-    │           ├── css/app.css               # Modern Design System (Light/Dark)
-    │           ├── js/app.js                 # REST Client & Reactive UI Logic
-    │           ├── img/iiuc-logo.png         # Official IIUC University Crest
-    │           └── data/courses.json         # Standalone 1,113 Course Catalog
-    └── test/
-        └── java/com/iiuc/iiucAPI/IiucApiApplicationTests.java
+├── README.md                           # Comprehensive documentation & architecture
+├── pom.xml                             # Maven build configuration (Java 21, Spring Boot 3)
+├── mvnw / mvnw.cmd                     # Cross-platform Maven wrapper scripts
+├── vercel.json                         # Vercel serverless routing configuration
+├── LICENSE                             # MIT License
+├── api/
+│   ├── courses.js                      # Vercel serverless REST API function
+│   └── _data/
+│       └── courses.json                # JSON catalog backup (1,113 courses)
+├── src/
+│   ├── main/
+│   │   ├── java/com/iiuc/iiucAPI/
+│   │   │   ├── IiucApiApplication.java # Spring Boot application entry point
+│   │   │   ├── controller/
+│   │   │   │   └── CourseController.java # REST API controller endpoints
+│   │   │   ├── model/
+│   │   │   │   └── Course.java         # Course domain entity model
+│   │   │   └── service/
+│   │   │       └── CourseService.java  # Catalog ingestion & business logic
+│   │   └── resources/
+│   │       ├── application.properties  # Spring Boot configuration
+│   │       └── static/                 # Production-grade web interface
+│   │           ├── index.html          # Semantic HTML5 Single Page Application
+│   │           ├── css/app.css         # Modern design tokens & theme variables
+│   │           ├── js/app.js           # Reactive UI logic & REST client
+│   │           ├── img/iiuc-logo.png   # Official university logo
+│   │           └── data/courses.json   # Static fallback course catalog
+│   └── test/
+│       └── java/com/iiuc/iiucAPI/
+│           └── IiucApiApplicationTests.java # Context loading tests
 ```
 
 ---
 
-## 📜 License
-Developed for International Islamic University Chittagong (IIUC).
+## 🔮 Future Scope & Roadmap
+
+- [ ] **Phase 1: Persistent Database Integration** — Connect PostgreSQL / MySQL with Spring Data JPA.
+- [ ] **Phase 2: Security & Identity Management** — Introduce Spring Security 6 with JWT for role-based student/faculty logins.
+- [ ] **Phase 3: Interactive Swagger Documentation** — Integrate `springdoc-openapi` for browser-based API testing at `/swagger-ui.html`.
+- [ ] **Phase 4: Prerequisite Dependency Graph** — Directed Acyclic Graph (DAG) for degree path auditing.
+- [ ] **Phase 5: Automated Routine Builder** — Conflict-free timetable generator based on course selections.
+
+---
+
+## 📜 License & Acknowledgments
+
+This project is open-source under the **[MIT License](LICENSE)**. Developed for **International Islamic University Chittagong (IIUC)**.
