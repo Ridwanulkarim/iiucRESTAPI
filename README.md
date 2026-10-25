@@ -13,7 +13,7 @@
   <a href="https://www.oracle.com/java/"><img src="https://img.shields.io/badge/Java-21%20LTS-orange?logo=openjdk&logoColor=white" alt="Java 21" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Architecture-RESTful%20API-blue?logo=fastapi&logoColor=white" alt="REST API" /></a>
   <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Frontend-TailwindCSS%20%7C%20HTML5%20%7C%20JS-38B2AC?logo=tailwindcss&logoColor=white" alt="Frontend" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Curriculum-1%2C113%20Courses-success?logo=buffer&logoColor=white" alt="Courses" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Curriculum-1%2C117%20Courses-success?logo=buffer&logoColor=white" alt="Courses" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
 </p>
 
@@ -32,7 +32,7 @@
 
 The **IIUC Course Portal** is an all-inclusive academic management platform designed to streamline course discovery, curriculum tracking, and degree planning across **International Islamic University Chittagong (IIUC)**. 
 
-Built with a high-performance **Java 21 / Spring Boot 3** backend and a reactive **HTML5 / Tailwind CSS / Vanilla JavaScript** frontend, the system encapsulates verified semester curriculums across **15 academic departments** within **6 faculties**, covering over **1,113 accredited courses** with credits, theory/lab classifications, and prerequisite tracking.
+Built with a high-performance **Java 21 / Spring Boot 3** backend and a reactive **HTML5 / Tailwind CSS / Vanilla JavaScript** frontend, the system encapsulates verified semester curriculums across **15 academic departments** within **6 faculties**, covering over **1,117 accredited courses** with credits, theory/lab classifications, and prerequisite tracking.
 
 ---
 
@@ -69,7 +69,7 @@ flowchart TB
     end
 
     subgraph DataLayer["💾 Data & Catalog Storage Tier"]
-        InMemoryData[("In-Memory Course Store<br/>1,113 Pre-seeded Courses<br/>15 Departments • 6 Faculties")]
+        InMemoryData[("In-Memory Course Store<br/>1,117 Pre-seeded Courses<br/>15 Departments • 6 Faculties")]
         JSONCatalog[("Standalone courses.json<br/>Static Data Fallback")]
         FutureDB[("Roadmap Phase 2:<br/>PostgreSQL / MySQL + JPA")]
     end
@@ -104,7 +104,7 @@ sequenceDiagram
     participant Browser as 🌐 Web UI (SPA)
     participant Controller as 🎮 CourseController (/api/courses)
     participant Service as 💼 CourseService
-    participant Store as 🗄️ Course Store (1,113 Courses)
+    participant Store as 🗄️ Course Store (1,117 Courses)
 
     User->>Browser: Selects Department / Semester / Filter
     Browser->>Controller: GET /api/courses
@@ -112,7 +112,7 @@ sequenceDiagram
     Controller->>Service: getAllCourses()
     activate Service
     Service->>Store: Query course catalog
-    Store-->>Service: Return 1,113 Course records
+    Store-->>Service: Return 1,117 Course records
     Service-->>Controller: List<Course>
     deactivate Service
     Controller-->>Browser: 200 OK (JSON Payload)
@@ -129,7 +129,7 @@ The catalog incorporates the entire undergraduate curriculum of IIUC across **6 
 
 | Faculty | Department | Total Courses | Semesters |
 | :--- | :--- | :---: | :---: |
-| **Faculty of Science and Engineering (FSE)** | Computer Science and Engineering (CSE) | **124** | 1st – 8th + Electives |
+| **Faculty of Science and Engineering (FSE)** | Computer Science and Engineering (CSE) | **128** | 1st – 8th + Electives |
 | | Computer & Communication Engineering (CCE) | **108** | 1st – 8th + Options I & II |
 | | Electrical & Electronic Engineering (EEE) | **102** | 1st – 8th + Electives |
 | | Electronic & Telecommunication Engineering (ETE) | **101** | 1st – 8th + Electives |
@@ -144,7 +144,7 @@ The catalog incorporates the entire undergraduate curriculum of IIUC across **6 
 | | Finance | **59** | 1st – 8th |
 | **Faculty of Social Sciences** | Economics and Banking | **54** | 1st – 8th |
 | **Faculty of Law** | Law and Land Management | **50** | 1st – 8th |
-| **Total Academic Scope** | **15 Departments Across 6 Faculties** | **1,113 Courses** | **0th – 8th** |
+| **Total Academic Scope** | **15 Departments Across 6 Faculties** | **1,117 Courses** | **0th – 8th** |
 
 ---
 
@@ -172,7 +172,7 @@ Base URL: `http://localhost:8080/api/courses` (Local) or `https://iiuccourse-res
 
 | Method | Endpoint | Description | Request Body | Status Code |
 | :--- | :--- | :--- | :--- | :---: |
-| **GET** | `/api/courses` | Retrieve all 1,113 academic courses | None | `200 OK` |
+| **GET** | `/api/courses` | Retrieve all 1,117 academic courses | None | `200 OK` |
 | **GET** | `/api/courses/{id}` | Retrieve specific course details by ID | None | `200 OK` / `404 Not Found` |
 | **POST** | `/api/courses` | Create a new academic course entry | Course JSON | `201 Created` |
 | **PUT** | `/api/courses/{id}` | Modify an existing course record | Course JSON | `200 OK` / `404 Not Found` |

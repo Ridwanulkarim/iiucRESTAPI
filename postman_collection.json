@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "IIUC Course Portal REST API",
+		"description": "Postman Collection for International Islamic University Chittagong (IIUC) Course Management REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string",
+			"description": "Switch to https://iiuccourse-restapi.vercel.app for Live Cloud API"
+		}
+	],
+	"item": [
+		{
+			"name": "1. Get All Courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/courses",
+					"host": ["{{base_url}}"],
+					"path": ["api", "courses"]
+				},
+				"description": "Retrieve all 1,113 academic courses"
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Single Course by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/courses/100",
+					"host": ["{{base_url}}"],
+					"path": ["api", "courses", "100"]
+				},
+				"description": "Retrieve details of a specific course by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "3. Create New Course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"courseCode\": \"CSE-4899\",\n  \"courseTitle\": \"Deep Learning and Neural Networks\",\n  \"courseCredit\": 3.0,\n  \"courseType\": \"Theory\",\n  \"semesterOffered\": \"8th\",\n  \"deptName\": \"Computer Science and Engineering (CSE)\",\n  \"instructor\": \"Faculty Member\",\n  \"prerequisite\": \"CSE-2201\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/courses",
+					"host": ["{{base_url}}"],
+					"path": ["api", "courses"]
+				},
+				"description": "Add a new course record"
+			},
+			"response": []
+		},
+		{
+			"name": "4. Update Course",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"courseCode\": \"CSE-1121\",\n  \"courseTitle\": \"Computer Programming I (Advanced Edition)\",\n  \"courseCredit\": 3.0,\n  \"courseType\": \"Theory\",\n  \"semesterOffered\": \"1st\",\n  \"deptName\": \"Computer Science and Engineering (CSE)\",\n  \"instructor\": \"Dr. Mohammad Shahidul Islam\",\n  \"prerequisite\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/courses/100",
+					"host": ["{{base_url}}"],
+					"path": ["api", "courses", "100"]
+				},
+				"description": "Update an existing course by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "5. Delete Course",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/courses/100",
+					"host": ["{{base_url}}"],
+					"path": ["api", "courses", "100"]
+				},
+				"description": "Delete a course by ID"
+			},
+			"response": []
+		}
+	]
+}
