@@ -88,7 +88,6 @@ public class CourseService {
         add("CSE-2430", "Competitive Programming 2", 1.0, "Lab", "4th", dept, "");
         add("ACC-2401", "Financial and Managerial Accounting", 2.0, "Theory", "4th", dept, "");
         add("GEBL-2401", "Functional Bengali Language", 2.0, "Theory", "4th", dept, "");
-        add("MDP-2404", "Concepts on Moral Development-1", 0.0, "Theory", "4th", dept, "");
 
         // 5th Semester (CSE-57 Batch)
         add("CSE-3521", "Computer Architecture", 3.0, "Theory", "5th", dept, "CSE-2323");
@@ -101,7 +100,7 @@ public class CourseService {
         add("EEE-2421", "Electrical Drive and Instrumentation", 2.0, "Theory", "5th", dept, "EEE-1221");
         add("EEE-2422", "Electrical Drive and Instrumentation Lab", 1.0, "Lab", "5th", dept, "");
         add("URED-3503", "Introduction to Political Thoughts and Social Behavior", 1.0, "Theory", "5th", dept, "");
-        add("MDP-3505", "Concepts on Moral Development-II", 0.0, "Theory", "5th", dept, "");
+        add("MDP-3505", "Concepts on Moral Development-1", 0.0, "Theory", "5th", dept, "");
 
         // 6th Semester (CSE-56 Batch)
         add("CSE-3525", "Data Communication", 3.0, "Theory", "6th", dept, "");
