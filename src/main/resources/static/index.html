@@ -505,10 +505,135 @@
     </div>
   </dialog>
 
+  <!-- Detailed Course Syllabus Dialog -->
+  <dialog id="syllabusDialog" class="modal-dialog modal-dialog-lg" closedby="any" aria-labelledby="syllabusDialogTitle">
+    <div class="dialog-content syllabus-modal-content">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <div class="dialog-header-icon icon-info">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+              <path d="M6 6h10"></path>
+              <path d="M6 10h10"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="course-code-badge" id="sylCourseCode">CSE-XXXX</span>
+              <span class="badge" id="sylCourseType">Theory</span>
+              <span class="badge badge-dept" id="sylCreditHours">3.0 CRH</span>
+              <span class="badge badge-prereq hidden" id="sylPrereqBadge"></span>
+            </div>
+            <h2 id="syllabusDialogTitle" class="text-xl font-bold">Course Title</h2>
+          </div>
+        </div>
+        <button type="button" id="closeSyllabusDialogBtn" class="dialog-close-btn" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Segmentation Tabs Navigation -->
+      <div class="syllabus-tabs-nav">
+        <button type="button" class="syl-tab-btn active" data-tab="syl-tab-overview">Overview & Rationale</button>
+        <button type="button" class="syl-tab-btn" data-tab="syl-tab-clos">CLOs & Outcomes</button>
+        <button type="button" class="syl-tab-btn" data-tab="syl-tab-midterm">Mid-Term (30 Marks)</button>
+        <button type="button" class="syl-tab-btn" data-tab="syl-tab-final">Final Exam (50 Marks)</button>
+        <button type="button" class="syl-tab-btn" data-tab="syl-tab-books">Textbooks & Books</button>
+        <button type="button" class="syl-tab-btn" data-tab="syl-tab-marks">Marks Breakdown</button>
+      </div>
+
+      <!-- Segmentation Tab Panels -->
+      <div class="syllabus-tab-body">
+        <!-- Overview & Rationale -->
+        <div id="syl-tab-overview" class="syl-tab-pane active">
+          <div class="syl-section">
+            <h3 class="syl-section-title">Course Rationale</h3>
+            <p id="sylRationale" class="syl-text"></p>
+          </div>
+          <div class="syl-section mt-4">
+            <h3 class="syl-section-title">Course Objectives</h3>
+            <ul id="sylObjectives" class="syl-list"></ul>
+          </div>
+          <div class="syl-section mt-4" id="sylMetaSection">
+            <div class="grid grid-cols-2 gap-3 text-sm" id="sylMetaGrid"></div>
+          </div>
+        </div>
+
+        <!-- CLOs & Outcomes -->
+        <div id="syl-tab-clos" class="syl-tab-pane hidden">
+          <div class="syl-section">
+            <h3 class="syl-section-title">Course Learning Outcomes (CLOs)</h3>
+            <div class="overflow-x-auto mt-2">
+              <table class="syl-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>CLO Description</th>
+                    <th>Weightage</th>
+                  </tr>
+                </thead>
+                <tbody id="sylClosTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mid-Term Content -->
+        <div id="syl-tab-midterm" class="syl-tab-pane hidden">
+          <div class="syl-section">
+            <div class="flex items-center justify-between">
+              <h3 class="syl-section-title">Section-A: Mid-Term Syllabus (30 Marks)</h3>
+              <span class="badge badge-midterm">30 Marks</span>
+            </div>
+            <div id="sylMidtermList" class="syl-timeline mt-3"></div>
+          </div>
+        </div>
+
+        <!-- Final Exam Content -->
+        <div id="syl-tab-final" class="syl-tab-pane hidden">
+          <div class="syl-section">
+            <div class="flex items-center justify-between">
+              <h3 class="syl-section-title">Section-B: Semester End Examination (50 Marks)</h3>
+              <span class="badge badge-final">50 Marks</span>
+            </div>
+            <div id="sylFinalList" class="syl-timeline mt-3"></div>
+          </div>
+        </div>
+
+        <!-- Textbooks & Reference Books -->
+        <div id="syl-tab-books" class="syl-tab-pane hidden">
+          <div class="syl-section">
+            <h3 class="syl-section-title">Recommended Textbooks</h3>
+            <div id="sylTextbooksList" class="syl-books-grid mt-2"></div>
+          </div>
+          <div class="syl-section mt-4">
+            <h3 class="syl-section-title">Reference Books</h3>
+            <div id="sylReferenceBooksList" class="syl-books-grid mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Marks Distribution -->
+        <div id="syl-tab-marks" class="syl-tab-pane hidden">
+          <div class="syl-section">
+            <h3 class="syl-section-title">Continuous Internal Evaluation (CIE) & SEE</h3>
+            <div id="sylMarksContainer" class="syl-marks-card mt-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" id="closeSyllabusBottomBtn" class="btn btn-secondary">Close Syllabus</button>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Floating Toast Notifications -->
   <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
   <!-- App JavaScript -->
-  <script src="/js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

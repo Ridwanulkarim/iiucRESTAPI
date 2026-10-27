@@ -14,7 +14,7 @@ module.exports = (req, res) => {
     return;
   }
 
-  const { id } = req.query;
+  const { id, syllabus } = req.query;
 
   if (req.method === 'GET') {
     if (id) {
@@ -23,6 +23,16 @@ module.exports = (req, res) => {
       );
       if (!course) {
         return res.status(404).json({ error: 'Course not found' });
+      }
+      if (syllabus === 'true') {
+        let syllabusData = {};
+        try {
+          syllabusData = require('./_data/cse_syllabus_details.json');
+        } catch (e) {}
+        return res.status(200).json({
+          ...course,
+          syllabus: syllabusData[course.courseCode] || null
+        });
       }
       return res.status(200).json(course);
     }

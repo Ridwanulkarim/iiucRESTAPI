@@ -158,6 +158,14 @@ The catalog incorporates the entire undergraduate curriculum of IIUC across **6 
 - 🗂️ **Dual View Presentation**:
   - **Card Grid View**: Visual cards with status indicators and quick-action modals.
   - **Table View**: Compact, sortable tabular data layout.
+- 📘 **Interactive OBE Course Syllabus Segmentation**: Detailed course-by-course syllabus viewer conforming to IIUC Outcome-Based Education (OBE) standards:
+  - **Overview & Rationale**: Course justification, academic objectives, contact hours, and co-requisites.
+  - **CLOs & Outcomes**: Granular Course Learning Outcomes mapped with weightage percentages.
+  - **Mid-Term Syllabus (30 Marks)**: Section-A weekly topic timelines and duration mapping.
+  - **Semester End Examination (50 Marks)**: Section-B advanced groups, industrial applications, and exam requirements.
+  - **Textbooks & References**: Recommended editions, publisher details, and ISBN references.
+  - **Marks Breakdown**: Complete CIE (50 Marks: Attendance 10 + Quizzes 10 + Midterm 30) and SEE (50 Marks) evaluation matrix.
+- 🔍 **Deep Syllabus Topic Search**: Live client-side indexing enables searching directly across syllabus topics (e.g., *K-means*, *Dijkstra*, *Deadlock*, *Wireshark*, *Compiler*, *Bresenham*, *Pointers*).
 - 🌓 **Adaptive Theme Engine**: Built-in CSS custom property theme switcher (Dark / Light) with persistent `localStorage`.
 - ⚡ **Full CRUD Capabilities**: Modal dialogs for adding new courses, updating information, and safe deletion confirmation.
 - 📱 **Fully Responsive Layout**: Built with a mobile-first philosophy, adapting across smartphones, tablets, and widescreen desktop displays.
@@ -173,7 +181,10 @@ Base URL: `http://localhost:8080/api/courses` (Local) or `https://iiuccourse-res
 | Method | Endpoint | Description | Request Body | Status Code |
 | :--- | :--- | :--- | :--- | :---: |
 | **GET** | `/api/courses` | Retrieve all 1,116 academic courses | None | `200 OK` |
-| **GET** | `/api/courses/{id}` | Retrieve specific course details by ID | None | `200 OK` / `404 Not Found` |
+| **GET** | `/api/courses/{id}` | Retrieve specific course details by ID or code | None | `200 OK` / `404 Not Found` |
+| **GET** | `/api/courses/{id}?syllabus=true` | Retrieve course details with embedded segmented syllabus | None | `200 OK` / `404 Not Found` |
+| **GET** | `/api/syllabus` | Retrieve all pre-extracted detailed course syllabi | None | `200 OK` |
+| **GET** | `/api/syllabus?code={code}` | Retrieve detailed syllabus for specific course code | None | `200 OK` / `404 Not Found` |
 | **POST** | `/api/courses` | Create a new academic course entry | Course JSON | `201 Created` |
 | **PUT** | `/api/courses/{id}` | Modify an existing course record | Course JSON | `200 OK` / `404 Not Found` |
 | **DELETE** | `/api/courses/{id}` | Delete a course record by ID | None | `200 OK` / `404 Not Found` |
