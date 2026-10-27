@@ -1179,11 +1179,11 @@ window.openSyllabusModal = function(courseCode) {
           <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
             <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">
               <span>• Section-A (Midterm Topics):</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">15 Marks</strong>
+              <strong style="color: var(--text-primary); font-family: var(--font-mono);">20 Marks</strong>
             </li>
             <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">
               <span>• Section-B (Final Term Topics):</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">35 Marks</strong>
+              <strong style="color: var(--text-primary); font-family: var(--font-mono);">30 Marks</strong>
             </li>
             <li style="display: flex; justify-content: space-between; padding-bottom: 2px;">
               <span>• Total Examination Weight:</span>
