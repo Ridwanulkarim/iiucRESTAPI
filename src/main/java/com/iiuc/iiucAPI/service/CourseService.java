@@ -54,62 +54,62 @@ public class CourseService {
 
         // 2nd Semester (CSE-60 Batch)
         add("CSE-1221", "Computer Programming 2", 3.0, "Theory", "2nd", dept, "CSE-1121");
-        add("CSE-1222", "Computer Programming 2 Lab", 1.5, "Lab", "2nd", dept, "");
+        add("CSE-1222", "Computer Programming 2 Lab", 1.5, "Lab", "2nd", dept, "CSE-1122");
         add("CSE-1223", "Discrete Mathematics", 3.0, "Theory", "2nd", dept, "");
         add("EEE-1221", "Electronics", 3.0, "Theory", "2nd", dept, "EEE-1121");
-        add("EEE-1222", "Electronics Lab", 1.5, "Lab", "2nd", dept, "");
+        add("EEE-1222", "Electronics Lab", 1.5, "Lab", "2nd", dept, "EEE-1122");
         add("MATH-1207", "Mathematics II (Geometry and Differential Equations)", 3.0, "Theory", "2nd", dept, "MATH-1107");
         add("PHY-1201", "Physics II (Electromagnetism, Optics and Modern Physics)", 3.0, "Theory", "2nd", dept, "PHY-1101");
-        add("PHY-1204", "Physics II Lab (Electromagnetism, Optics and Modern Physics)", 1.5, "Lab", "2nd", dept, "");
-        add("CSE-1230", "Competitive Programming 1", 1.0, "Lab", "2nd", dept, "");
+        add("PHY-1204", "Physics II Lab (Electromagnetism, Optics and Modern Physics)", 1.5, "Lab", "2nd", dept, "PHY-1101");
+        add("CSE-1230", "Competitive Programming 1", 1.0, "Lab", "2nd", dept, "CSE-1122");
         add("GEED-1201", "Basic Principles of Islam (‘Aqidah+‘Ibadah)", 2.0, "Theory", "2nd", dept, "");
         add("MDP-1202", "Tajweedul Quran-II", 0.0, "Theory", "2nd", dept, "");
 
         // 3rd Semester (CSE-59 Batch)
         add("CSE-2321", "Data Structures", 3.0, "Theory", "3rd", dept, "CSE-1121");
-        add("CSE-2322", "Data Structures Lab", 1.0, "Lab", "3rd", dept, "");
-        add("CSE-2323", "Digital Logic Design", 3.0, "Theory", "3rd", dept, "EEE-1121");
-        add("CSE-2324", "Digital Logic Design Lab", 1.5, "Lab", "3rd", dept, "");
-        add("MATH-2307", "Mathematics III", 3.0, "Theory", "3rd", dept, "MATH-1207");
+        add("CSE-2322", "Data Structures Lab", 1.0, "Lab", "3rd", dept, "CSE-1122");
+        add("CSE-2323", "Digital Logic Design", 3.0, "Theory", "3rd", dept, "EEE-1221");
+        add("CSE-2324", "Digital Logic Design Lab", 1.5, "Lab", "3rd", dept, "EEE-1222");
+        add("MATH-2307", "Mathematics III", 3.0, "Theory", "3rd", dept, "MATH-1107");
         add("STAT-2311", "Probability and Statistics", 2.0, "Theory", "3rd", dept, "");
         add("CHEM-2301", "Chemistry", 3.0, "Theory", "3rd", dept, "");
-        add("CSE-2340", "Software Development 1", 2.0, "Lab", "3rd", dept, "CSE-1221");
+        add("CSE-2340", "Software Development 1", 2.0, "Lab", "3rd", dept, "CSE-1222");
         add("URED-2302", "Sciences of Quran and Hadith", 1.0, "Theory", "3rd", dept, "");
         add("MDP-2303", "Tajweedul Quran-III", 0.0, "Theory", "3rd", dept, "");
 
         // 4th Semester (CSE-58 Batch)
         add("CSE-2421", "Computer Algorithms", 3.0, "Theory", "4th", dept, "CSE-2321");
-        add("CSE-2422", "Computer Algorithms Lab", 1.0, "Lab", "4th", dept, "");
-        add("CSE-2423", "Database Management Systems", 3.0, "Theory", "4th", dept, "");
-        add("CSE-2424", "Database Management Systems Lab", 1.5, "Lab", "4th", dept, "");
-        add("CSE-2427", "Theory of Computation", 3.0, "Theory", "4th", dept, "");
+        add("CSE-2422", "Computer Algorithms Lab", 1.0, "Lab", "4th", dept, "CSE-2322");
+        add("CSE-2423", "Database Management Systems", 3.0, "Theory", "4th", dept, "CSE-1221");
+        add("CSE-2424", "Database Management Systems Lab", 1.5, "Lab", "4th", dept, "CSE-1222");
+        add("CSE-2427", "Theory of Computation", 3.0, "Theory", "4th", dept, "CSE-1223");
         add("MATH-2407", "Mathematics IV (Complex Variable, Fourier Analysis and Z-transform)", 3.0, "Theory", "4th", dept, "MATH-2307");
         add("ME-2412", "Engineering Drawing Lab", 1.0, "Lab", "4th", dept, "");
-        add("CSE-2430", "Competitive Programming 2", 1.0, "Lab", "4th", dept, "");
+        add("CSE-2430", "Competitive Programming 2", 1.0, "Lab", "4th", dept, "CSE-1230");
         add("ACC-2401", "Financial and Managerial Accounting", 2.0, "Theory", "4th", dept, "");
         add("GEBL-2401", "Functional Bengali Language", 2.0, "Theory", "4th", dept, "");
 
         // 5th Semester (CSE-57 Batch)
         add("CSE-3521", "Computer Architecture", 3.0, "Theory", "5th", dept, "CSE-2323");
-        add("CSE-3523", "Microprocessors, Microcontrollers and Embedded Systems", 3.0, "Theory", "5th", dept, "");
-        add("CSE-3524", "Microprocessors, Microcontrollers and Embedded Systems Lab", 1.0, "Lab", "5th", dept, "");
+        add("CSE-3523", "Microprocessors, Microcontrollers and Embedded Systems", 3.0, "Theory", "5th", dept, "CSE-3521");
+        add("CSE-3524", "Microprocessors, Microcontrollers and Embedded Systems Lab", 1.0, "Lab", "5th", dept, "CSE-2324");
         add("CSE-3527", "Compiler", 3.0, "Theory", "5th", dept, "CSE-2427");
-        add("CSE-3528", "Compiler Lab", 1.0, "Lab", "5th", dept, "");
+        add("CSE-3528", "Compiler Lab", 1.0, "Lab", "5th", dept, "CSE-2322");
         add("CSE-3529", "Systems Analysis and Design", 3.0, "Theory", "5th", dept, "");
-        add("CSE-3532", "Tools and Technologies for Internet Programming", 2.0, "Lab", "5th", dept, "CSE-1222");
+        add("CSE-3532", "Tools and Technologies for Internet Programming", 2.0, "Lab", "5th", dept, "CSE-2423");
         add("EEE-2421", "Electrical Drive and Instrumentation", 2.0, "Theory", "5th", dept, "EEE-1221");
-        add("EEE-2422", "Electrical Drive and Instrumentation Lab", 1.0, "Lab", "5th", dept, "");
+        add("EEE-2422", "Electrical Drive and Instrumentation Lab", 1.0, "Lab", "5th", dept, "EEE-1222");
         add("URED-3503", "Introduction to Political Thoughts and Social Behavior", 1.0, "Theory", "5th", dept, "");
         add("MDP-3505", "Concepts on Moral Development-1", 0.0, "Theory", "5th", dept, "");
 
         // 6th Semester (CSE-56 Batch)
         add("CSE-3525", "Data Communication", 3.0, "Theory", "6th", dept, "");
         add("CSE-3631", "Operating Systems", 3.0, "Theory", "6th", dept, "CSE-3521");
-        add("CSE-3632", "Operating Systems Lab", 1.0, "Lab", "6th", dept, "");
-        add("CSE-3635", "Artificial Intelligence", 3.0, "Theory", "6th", dept, "");
-        add("CSE-3636", "Artificial Intelligence Lab", 1.0, "Lab", "6th", dept, "");
+        add("CSE-3632", "Operating Systems Lab", 1.0, "Lab", "6th", dept, "CSE-3521");
+        add("CSE-3635", "Artificial Intelligence", 3.0, "Theory", "6th", dept, "CSE-2421");
+        add("CSE-3636", "Artificial Intelligence Lab", 1.0, "Lab", "6th", dept, "CSE-2422");
         add("CSE-3641", "Software Engineering", 3.0, "Theory", "6th", dept, "CSE-3529");
-        add("CSE-3642", "Software Engineering Lab", 1.0, "Lab", "6th", dept, "");
+        add("CSE-3642", "Software Engineering Lab", 1.0, "Lab", "6th", dept, "CSE-3532");
         add("CSE-3644", "Software Development 2 Lab", 1.0, "Lab", "6th", dept, "CSE-3532");
         add("ECON-3501", "Principles of Economics", 2.0, "Theory", "6th", dept, "");
         add("URED-3604", "Life and Teachings of Prophet Muhammad (SAAS)", 1.0, "Theory", "6th", dept, "");
@@ -118,29 +118,29 @@ public class CourseService {
 
         // 7th Semester (CSE-55 Batch)
         add("CSE-3633", "Computer Networks", 3.0, "Theory", "7th", dept, "CSE-3525");
-        add("CSE-3634", "Computer Networks Lab", 1.5, "Lab", "7th", dept, "");
+        add("CSE-3634", "Computer Networks Lab", 1.5, "Lab", "7th", dept, "CSE-3525");
         add("CSE-4741", "Computer Graphics", 3.0, "Theory", "7th", dept, "MATH-2307");
         add("CSE-4742", "Computer Graphics Lab", 1.0, "Lab", "7th", dept, "");
-        add("CSE-4877", "Machine Learning Data Mining", 3.0, "Theory", "7th", dept, "");
-        add("CSE-4878", "Machine Learning And Data Mining Lab", 1.0, "Lab", "7th", dept, "");
+        add("CSE-4877", "Machine Learning Data Mining", 3.0, "Theory", "7th", dept, "CSE-3635");
+        add("CSE-4878", "Machine Learning And Data Mining Lab", 1.0, "Lab", "7th", dept, "CSE-3636");
         add("CSE-4745", "Numerical Methods", 2.0, "Theory", "7th", dept, "CSE-1121");
-        add("CSE-4746", "Numerical Methods Lab", 1.0, "Lab", "7th", dept, "");
-        add("CSE-4747", "Mathematical Analysis for Computer Science", 3.0, "Theory", "7th", dept, "STAT-2311");
+        add("CSE-4746", "Numerical Methods Lab", 1.0, "Lab", "7th", dept, "CSE-1122");
+        add("CSE-4747", "Mathematical Analysis for Computer Science", 3.0, "Theory", "7th", dept, "CSE-1223, CSE-2421, STAT-2311");
         add("CSE-4750", "Technical Writing and Presentation", 1.0, "Theory", "7th", dept, "");
-        add("CSE-4708", "Field Work", 1.0, "Lab", "7th", dept, "");
+        add("CSE-4708", "Field Work", 1.0, "Lab", "7th", dept, "Core Courses of CSE");
         add("URIH-4701", "A Survey of Islamic History and Culture", 1.0, "Theory", "7th", dept, "");
 
         // 8th Semester (CSE-54 Batch - Core & Offered Courses)
         add("CSE-4805", "Social, Professional, and Ethical Issues in Computing", 2.0, "Theory", "8th", dept, "");
-        add("CSE-4743", "Computer Security", 2.0, "Theory", "8th", dept, "");
-        add("CSE-4744", "Computer Security Lab", 1.0, "Lab", "8th", dept, "");
-        add("CSE-4875", "Pattern Recognition and Image Processing", 3.0, "Theory", "8th", dept, "");
-        add("CSE-4876", "Pattern Recognition and Image Processing Lab", 1.0, "Lab", "8th", dept, "");
-        add("CSE-4871", "Neural Network and Fuzzy System", 3.0, "Theory", "8th", dept, "");
-        add("CSE-4872", "Neural Network and Fuzzy System Lab", 1.0, "Lab", "8th", dept, "");
+        add("CSE-4743", "Computer Security", 2.0, "Theory", "8th", dept, "CSE-3633");
+        add("CSE-4744", "Computer Security Lab", 1.0, "Lab", "8th", dept, "CSE-3634");
+        add("CSE-4875", "Pattern Recognition and Image Processing", 3.0, "Theory", "8th", dept, "CSE-4741");
+        add("CSE-4876", "Pattern Recognition and Image Processing Lab", 1.0, "Lab", "8th", dept, "CSE-4742");
+        add("CSE-4871", "Neural Network and Fuzzy System", 3.0, "Theory", "8th", dept, "CSE-3635");
+        add("CSE-4872", "Neural Network and Fuzzy System Lab", 1.0, "Lab", "8th", dept, "CSE-3635");
         add("MGT-3601", "Industrial Management", 2.0, "Theory", "8th", dept, "");
-        add("CSE-4800", "Project/Thesis", 4.0, "Lab", "8th", dept, "");
-        add("CSE-4822", "General Viva", 1.0, "Theory", "8th", dept, "");
+        add("CSE-4800", "Project/Thesis", 4.0, "Lab", "8th", dept, "Completion of core courses in Computer Science and Engineering");
+        add("CSE-4822", "General Viva", 1.0, "Theory", "8th", dept, "Completion of all core courses");
 
         // 8th Semester Electives (Department Electives Catalog)
         add("CSE-4819", "Special Topic on Computer Science and Engineering", 3.0, "Theory", "8th", dept, "");
@@ -155,8 +155,8 @@ public class CourseService {
         add("CSE-4840", "Digital System Design Lab", 1.0, "Lab", "8th", dept, "");
         add("CSE-4843", "Decision Support System and Expert System", 3.0, "Theory", "8th", dept, "");
         add("CSE-4844", "Decision Support System Expert System Lab", 1.0, "Lab", "8th", dept, "");
-        add("CSE-4845", "Distributed Database", 3.0, "Theory", "8th", dept, "");
-        add("CSE-4846", "Distributed Database Lab", 1.0, "Lab", "8th", dept, "");
+        add("CSE-4845", "Distributed Database", 3.0, "Theory", "8th", dept, "CSE-2423");
+        add("CSE-4846", "Distributed Database Lab", 1.0, "Lab", "8th", dept, "CSE-2424");
         add("CSE-4847", "Software Project Management", 3.0, "Theory", "8th", dept, "");
         add("CSE-4848", "Software Project Management Lab", 1.0, "Lab", "8th", dept, "");
         add("CSE-4849", "Software Quality Assurance", 3.0, "Theory", "8th", dept, "");

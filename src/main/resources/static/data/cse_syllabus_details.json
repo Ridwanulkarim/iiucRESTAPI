@@ -248,7 +248,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-1121 (Computer Programming I)",
+    "prerequisite": "CSE-1121 (Computer Programming 1)",
     "coRequisite": "CSE-1222 (Computer Programming 2 Lab)",
     "courseRationale": "Object Oriented Programming (OOP) using C++. Equips students with in-depth knowledge of OOP paradigm: classes, objects, inheritance, polymorphism, and STL.",
     "objectives": [
@@ -682,7 +682,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-1121 (Computer Programming I)",
+    "prerequisite": "CSE-1121 (Computer Programming 1)",
     "coRequisite": "CSE-2322 (Data Structures Lab)",
     "courseRationale": "Core foundational course in computing. Covers linear and non-linear data structures, memory representations, time-space efficiency, and selection of optimal structures for real-world problems.",
     "objectives": [
@@ -801,7 +801,7 @@
     "creditHours": 1,
     "contactHours": 2,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-1122 (Computer Programming 2 Lab)",
+    "prerequisite": "CSE-1122 (Computer Programming 1 Lab)",
     "coRequisite": "CSE-2321 (Data Structures)",
     "courseRationale": "Practical programming implementation of linear and non-linear data structures in C/C++.",
     "objectives": [
@@ -899,7 +899,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "EEE-1121 (Basic Electrical Engineering)",
+    "prerequisite": "EEE-1221 (Electronics)",
     "coRequisite": "CSE-2324 (Digital Logic Design Lab)",
     "courseRationale": "Covers logic design of digital electronic circuits: Boolean algebra, combinational logic (adders, decoders, multiplexers), sequential circuits (flip-flops, registers, counters), and register transfer logic.",
     "objectives": [
@@ -1562,7 +1562,7 @@
     "creditHours": 2,
     "contactHours": 4,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-1222 (Computer Programming 2 Lab)",
+    "prerequisite": "CSE-2423 (Database Management Systems)",
     "coRequisite": "None",
     "courseRationale": "Practical experience designing and deploying full-stack web applications: HTML5, CSS3, Tailwind CSS, JavaScript, React, Node.js, Express, MongoDB, and PostgreSQL.",
     "objectives": [
@@ -2252,7 +2252,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-3631 (Operating Systems)",
+    "prerequisite": "CSE-3529 (Systems Analysis and Design)",
     "coRequisite": "CSE-3642 (Computer Networks Lab)",
     "courseRationale": "Provides a comprehensive study of computer networks principles, protocol layering (OSI & TCP/IP), network architecture, packet switching, routing algorithms, transport layer congestion control, and application layer protocols.",
     "objectives": [
@@ -2377,7 +2377,7 @@
     "creditHours": 1,
     "contactHours": 2,
     "type": "Core, Engineering",
-    "prerequisite": "None",
+    "prerequisite": "CSE-3532 (Tools and Technologies for Internet Programming)",
     "coRequisite": "CSE-3641 (Computer Networks)",
     "courseRationale": "Hands-on implementation of networking protocols, packet analysis with Wireshark, socket programming in C/Python/Java, and Cisco Packet Tracer network topologies design.",
     "objectives": [
@@ -2473,7 +2473,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-3532 (Theory of Computation)",
+    "prerequisite": "MATH-2307 (Mathematics III)",
     "coRequisite": "CSE-4742 (Compiler Design Lab)",
     "courseRationale": "Covers the theoretical foundations and engineering implementation of modern compilers and interpreters: lexical analysis, syntax analysis, syntax-directed translation, intermediate code generation, code optimization, and target machine code generation.",
     "objectives": [
@@ -2687,7 +2687,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "MATH-1207 (Linear Algebra and Vector Analysis)",
+    "prerequisite": "CSE-3635 (Artificial Intelligence)",
     "coRequisite": "CSE-4872 (Computer Graphics Lab)",
     "courseRationale": "Introduces hardware, mathematical foundations, and software algorithms for rendering 2D and 3D computer graphics: scan conversion, 2D/3D geometric transformations, viewing pipelines, clipping, illumination models, shading, and visible surface determination.",
     "objectives": [
@@ -2804,7 +2804,7 @@
     "creditHours": 1,
     "contactHours": 2,
     "type": "Core, Engineering",
-    "prerequisite": "None",
+    "prerequisite": "CSE-3635 (Artificial Intelligence)",
     "coRequisite": "CSE-4871 (Computer Graphics)",
     "courseRationale": "Practical programming of 2D and 3D graphics applications using C++/OpenGL/GLUT.",
     "objectives": [
@@ -2900,7 +2900,7 @@
     "creditHours": 3,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-2421 (Algorithms)",
+    "prerequisite": "CSE-4741 (Computer Graphics)",
     "coRequisite": "CSE-4876 (Digital Image Processing Lab)",
     "courseRationale": "Covers digital representation, enhancement, restoration, segmentation, and feature extraction of image data in spatial and frequency domains.",
     "objectives": [
@@ -3017,7 +3017,7 @@
     "creditHours": 1.5,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-1121 (Computer Programming I)",
+    "prerequisite": "CSE-1230 (Competitive Programming 1)",
     "coRequisite": "None",
     "courseRationale": "Full-stack web application development: semantic HTML5, modern CSS3 layout systems (Flexbox, Grid), JavaScript (ES6+), DOM manipulation, asynchronous programming (Fetch/AJAX), and backend server development with RESTful APIs.",
     "objectives": [
@@ -3120,7 +3120,7 @@
     "creditHours": 1.5,
     "contactHours": 3,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-2423 (Object Oriented Programming)",
+    "prerequisite": "None",
     "coRequisite": "None",
     "courseRationale": "Covers native and cross-platform mobile application design, lifecycle management, UI layout, local persistence (Room/SQLite), REST integration, background services, and hardware sensors.",
     "objectives": [
