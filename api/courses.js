@@ -29,9 +29,11 @@ module.exports = (req, res) => {
         try {
           syllabusData = require('./_data/cse_syllabus_details.json');
         } catch (e) {}
+        const isCse = course.courseCode.toUpperCase().startsWith('CSE') ||
+                      (course.deptName && course.deptName.toLowerCase().includes('computer science'));
         return res.status(200).json({
           ...course,
-          syllabus: syllabusData[course.courseCode] || null
+          syllabus: isCse ? (syllabusData[course.courseCode] || null) : null
         });
       }
       return res.status(200).json(course);

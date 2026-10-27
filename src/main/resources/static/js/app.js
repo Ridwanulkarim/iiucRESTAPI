@@ -322,8 +322,9 @@ function setLoading(isLoading) {
 
 function applyFilters() {
   state.filteredCourses = state.courses.filter(course => {
-    // Search query matches code, title, department, instructor, prerequisite, or syllabus topics
-    const syl = state.syllabusData && state.syllabusData[course.courseCode];
+    // Search query matches code, title, department, instructor, prerequisite, or syllabus topics (CSE only)
+    const isCse = isCseCourse(course);
+    const syl = isCse && state.syllabusData && state.syllabusData[course.courseCode];
     const matchesSyllabus = syl && (
       (syl.courseRationale && syl.courseRationale.toLowerCase().includes(state.searchQuery)) ||
       (syl.midtermContent && syl.midtermContent.some(m => m.topic && m.topic.toLowerCase().includes(state.searchQuery))) ||
@@ -472,11 +473,28 @@ function getDeptShortName(deptName) {
   return deptName;
 }
 
+function isCseCourse(course) {
+  if (!course) return false;
+  const dept = (course.deptName || '').toLowerCase();
+  const code = (course.courseCode || '').toUpperCase().trim();
+  const program = (course.program || '').toLowerCase();
+
+  return (
+    code.startsWith('CSE-') ||
+    code.startsWith('CSE') ||
+    dept.includes('computer science') ||
+    dept.includes('(cse)') ||
+    program.includes('cse') ||
+    Boolean(state.syllabusData && state.syllabusData[code])
+  );
+}
+
 function renderGridView() {
   elements.coursesGridView.innerHTML = state.filteredCourses.map(course => {
     const isTheory = (course.courseType || '').toLowerCase() === 'theory';
     const badgeClass = isTheory ? 'badge-theory' : 'badge-lab';
     const shortDept = getDeptShortName(course.deptName);
+    const hasSyllabus = isCseCourse(course);
 
     return `
       <article class="course-card" data-id="${course.courseId}">
@@ -529,13 +547,14 @@ function renderGridView() {
         <div class="card-footer">
           <span class="credit-tag">${course.courseCredit} Credit Hours</span>
           <div class="card-actions">
+            ${hasSyllabus ? `
             <button class="action-btn action-btn-syllabus" title="View Detailed Syllabus" onclick="openSyllabusModal('${escapeHtml(course.courseCode)}')" aria-label="View syllabus">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
                 <path d="M6 6h10"></path>
                 <path d="M6 10h10"></path>
               </svg>
-            </button>
+            </button>` : ''}
             <button class="action-btn" title="Edit Course" onclick="openEditCourseModal(${course.courseId})" aria-label="Edit course">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
@@ -559,6 +578,7 @@ function renderTableView() {
   elements.coursesTableBody.innerHTML = state.filteredCourses.map(course => {
     const isTheory = (course.courseType || '').toLowerCase() === 'theory';
     const badgeClass = isTheory ? 'badge-theory' : 'badge-lab';
+    const hasSyllabus = isCseCourse(course);
 
     return `
       <tr data-id="${course.courseId}">
@@ -573,13 +593,14 @@ function renderTableView() {
         <td>${escapeHtml(course.instructor || '')}</td>
         <td class="text-right">
           <div class="card-actions" style="justify-content: flex-end;">
+            ${hasSyllabus ? `
             <button class="action-btn action-btn-syllabus" title="View Detailed Syllabus" onclick="openSyllabusModal('${escapeHtml(course.courseCode)}')" aria-label="View syllabus">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
                 <path d="M6 6h10"></path>
                 <path d="M6 10h10"></path>
               </svg>
-            </button>
+            </button>` : ''}
             <button class="action-btn" title="Edit" onclick="openEditCourseModal(${course.courseId})" aria-label="Edit course">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
@@ -913,7 +934,14 @@ async function fetchSyllabusDetails() {
 
 window.openSyllabusModal = function(courseCode) {
   const code = (courseCode || '').trim();
-  const course = state.courses.find(c => (c.courseCode || '').toUpperCase() === code.toUpperCase()) || {
+  const course = state.courses.find(c => (c.courseCode || '').toUpperCase() === code.toUpperCase());
+
+  if (course && !isCseCourse(course)) {
+    showToast('Detailed syllabus is only available for CSE department courses.', 'info');
+    return;
+  }
+
+  const courseObj = course || {
     courseCode: code,
     courseTitle: code,
     courseCredit: 3.0,
@@ -921,7 +949,7 @@ window.openSyllabusModal = function(courseCode) {
     deptName: 'Computer Science and Engineering (CSE)'
   };
 
-  const syl = (state.syllabusData && state.syllabusData[code]) || generateDefaultSyllabus(course);
+  const syl = (state.syllabusData && state.syllabusData[code]) || generateDefaultSyllabus(courseObj);
 
   // Set Modal Header Badges & Title
   if (elements.sylCourseCode) elements.sylCourseCode.textContent = syl.courseCode || course.courseCode || 'N/A';
