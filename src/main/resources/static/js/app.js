@@ -1176,46 +1176,46 @@ window.openSyllabusModal = function(courseCode) {
 
     elements.sylMarksContainer.innerHTML = `
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        <div style="background: var(--bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); border-top: 4px solid #0284c7;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <h4 style="font-weight: 700; color: #0284c7; font-size: 1rem;">Continuous Internal Evaluation (CIE)</h4>
-            <span class="badge badge-midterm" style="font-size: 0.85rem; font-weight: 700;">50% Marks</span>
+        <div style="background: var(--bg-card); padding: 1.35rem; border-radius: var(--radius-sm); border: var(--border-thick); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+            <h4 style="font-family: var(--font-display); font-weight: 800; color: var(--text-ink); font-size: 1.05rem;">Continuous Internal Evaluation (CIE)</h4>
+            <span class="badge badge-midterm" style="font-size: 0.8rem; font-weight: 800;">50% Marks</span>
           </div>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.85rem;">Evaluated continuously throughout the 14-week semester:</p>
-          <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
-            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.95rem;">Evaluated continuously throughout the 14-week semester:</p>
+          <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem;">
+            <li style="display: flex; justify-content: space-between; border-bottom: 1.5px dashed var(--border-ink); padding-bottom: 5px;">
               <span>• Class Attendance & Participation:</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">${cieDetails.attendance || 10} Marks</strong>
+              <strong style="color: var(--text-ink); font-family: var(--font-mono); font-weight: 800;">${cieDetails.attendance || 10} Marks</strong>
             </li>
-            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">
+            <li style="display: flex; justify-content: space-between; border-bottom: 1.5px dashed var(--border-ink); padding-bottom: 5px;">
               <span>• Class Tests / Quizzes / Assignments:</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">${cieDetails.classTestAssignment || cieDetails.labAssignments || 10} Marks</strong>
+              <strong style="color: var(--text-ink); font-family: var(--font-mono); font-weight: 800;">${cieDetails.classTestAssignment || cieDetails.labAssignments || 10} Marks</strong>
             </li>
             <li style="display: flex; justify-content: space-between; padding-bottom: 2px;">
               <span>• Mid-Term Examination (90 Minutes):</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">${cieDetails.midterm || cieDetails.midtermLab || 30} Marks</strong>
+              <strong style="color: var(--text-ink); font-family: var(--font-mono); font-weight: 800;">${cieDetails.midterm || cieDetails.midtermLab || 30} Marks</strong>
             </li>
           </ul>
         </div>
 
-        <div style="background: var(--bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); border-top: 4px solid #10b981;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <h4 style="font-weight: 700; color: #10b981; font-size: 1rem;">Semester End Examination (SEE)</h4>
-            <span class="badge badge-final" style="font-size: 0.85rem; font-weight: 700;">50% Marks</span>
+        <div style="background: var(--bg-card); padding: 1.35rem; border-radius: var(--radius-sm); border: var(--border-thick); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+            <h4 style="font-family: var(--font-display); font-weight: 800; color: var(--text-ink); font-size: 1.05rem;">Semester End Examination (SEE)</h4>
+            <span class="badge badge-final" style="font-size: 0.8rem; font-weight: 800;">50% Marks</span>
           </div>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.85rem;">Comprehensive final examination at semester end:</p>
-          <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
-            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.95rem;">Comprehensive final examination at semester end:</p>
+          <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.65rem;">
+            <li style="display: flex; justify-content: space-between; border-bottom: 1.5px dashed var(--border-ink); padding-bottom: 5px;">
               <span>• Section-A (Midterm Topics):</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">20 Marks</strong>
+              <strong style="color: var(--terracotta); font-family: var(--font-mono); font-weight: 800;">20 Marks</strong>
             </li>
-            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 4px;">
+            <li style="display: flex; justify-content: space-between; border-bottom: 1.5px dashed var(--border-ink); padding-bottom: 5px;">
               <span>• Section-B (Final Term Topics):</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">30 Marks</strong>
+              <strong style="color: var(--pine); font-family: var(--font-mono); font-weight: 800;">30 Marks</strong>
             </li>
             <li style="display: flex; justify-content: space-between; padding-bottom: 2px;">
               <span>• Total Examination Weight:</span>
-              <strong style="color: var(--text-primary); font-family: var(--font-mono);">${seeDetails.writtenExam || seeDetails.finalLabExam || 50} Marks</strong>
+              <strong style="color: var(--text-ink); font-family: var(--font-mono); font-weight: 800;">${seeDetails.writtenExam || seeDetails.finalLabExam || 50} Marks</strong>
             </li>
           </ul>
         </div>

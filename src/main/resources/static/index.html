@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IIUC Course Portal — Academic Management System</title>
+  <title>IIUC Course Portal — Retro-Tech Academic Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/iiuc-logo.png" />
   <link rel="apple-touch-icon" href="img/iiuc-logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,18 +16,26 @@
       theme: {
         extend: {
           colors: {
-            iiuc: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              200: '#a7f3d0',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b',
-            }
+            pine: {
+              DEFAULT: '#1A3B32',
+              light: '#254E43',
+              dark: '#112822'
+            },
+            cream: {
+              DEFAULT: '#F4EFEA',
+              dark: '#E8E1D9'
+            },
+            terracotta: {
+              DEFAULT: '#FF522B',
+              hover: '#E03E18'
+            },
+            amber: {
+              DEFAULT: '#F5A623'
+            },
+            ink: '#121212'
           },
           fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
             sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
           }
@@ -46,8 +54,11 @@
           <img src="/img/iiuc-logo.png" alt="IIUC Crest Logo" class="logo-img" />
         </div>
         <div class="brand-text">
-          <h1>IIUC Course Portal</h1>
-          <span class="brand-subtitle">International Islamic University Chittagong</span>
+          <h1>IIUC Course <span class="highlight-terracotta">Portal</span></h1>
+          <div class="brand-meta-row">
+            <span class="retro-mini-badge">ACADEMIC // 2025</span>
+            <span class="brand-subtitle">International Islamic University Chittagong</span>
+          </div>
         </div>
       </div>
 
@@ -89,7 +100,30 @@
   </header>
 
   <main class="main-container">
-    <!-- Hero / Metrics Dashboard -->
+    <!-- Retro Hero Banner -->
+    <section class="retro-hero">
+      <div class="hero-left">
+        <div class="hero-tags-row">
+          <span class="retro-pill-tag tag-terracotta">★ SPRING 2025 SYLLABUS</span>
+          <span class="retro-pill-tag tag-pine">CSE DEPT ACCREDITED</span>
+          <span class="retro-pill-tag tag-amber">OBE COMPLIANT</span>
+        </div>
+        <h2 class="hero-title">Academic Course Directory &amp; <span class="text-terracotta">Syllabus Portal</span></h2>
+        <p class="hero-description">
+          Explore complete undergraduate degree specifications, verified prerequisite pathways, continuous evaluation breakdowns, and semester-end exam distributions for IIUC.
+        </p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stamp-card">
+          <div class="stamp-badge">OFFICIAL</div>
+          <div class="stamp-code">IIUC // FSE</div>
+          <div class="stamp-sub">EST. 1995 • CHITTAGONG</div>
+          <div class="stamp-dots">● ● ● ● ●</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Dashboard -->
     <section class="metrics-grid">
       <div class="metric-card">
         <div class="metric-icon metric-icon-green">
