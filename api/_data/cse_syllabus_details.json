@@ -1562,7 +1562,7 @@
     "creditHours": 2,
     "contactHours": 4,
     "type": "Core, Engineering",
-    "prerequisite": "CSE-2423 (Database Management Systems)",
+    "prerequisite": "CSE-2340 (Software Development 1)",
     "coRequisite": "None",
     "courseRationale": "Practical experience designing and deploying full-stack web applications: HTML5, CSS3, Tailwind CSS, JavaScript, React, Node.js, Express, MongoDB, and PostgreSQL.",
     "objectives": [
@@ -2590,7 +2590,7 @@
     "creditHours": 1,
     "contactHours": 2,
     "type": "Core, Engineering",
-    "prerequisite": "None",
+    "prerequisite": "CSE-2322 (Data Structures Lab)",
     "coRequisite": "CSE-4741 (Compiler Design)",
     "courseRationale": "Practical engineering of compiler components using C/C++, Flex (Lexical Analyzer Generator), and Bison/Yacc (Parser Generator).",
     "objectives": [

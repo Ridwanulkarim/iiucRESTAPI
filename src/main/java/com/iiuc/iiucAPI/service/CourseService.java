@@ -70,7 +70,7 @@ public class CourseService {
         add("CSE-2322", "Data Structures Lab", 1.0, "Lab", "3rd", dept, "CSE-1122");
         add("CSE-2323", "Digital Logic Design", 3.0, "Theory", "3rd", dept, "EEE-1221");
         add("CSE-2324", "Digital Logic Design Lab", 1.5, "Lab", "3rd", dept, "EEE-1222");
-        add("MATH-2307", "Mathematics III", 3.0, "Theory", "3rd", dept, "MATH-1107");
+        add("MATH-2307", "Mathematics III", 3.0, "Theory", "3rd", dept, "MATH-1207");
         add("STAT-2311", "Probability and Statistics", 2.0, "Theory", "3rd", dept, "");
         add("CHEM-2301", "Chemistry", 3.0, "Theory", "3rd", dept, "");
         add("CSE-2340", "Software Development 1", 2.0, "Lab", "3rd", dept, "CSE-1222");
@@ -91,12 +91,12 @@ public class CourseService {
 
         // 5th Semester (CSE-57 Batch)
         add("CSE-3521", "Computer Architecture", 3.0, "Theory", "5th", dept, "CSE-2323");
-        add("CSE-3523", "Microprocessors, Microcontrollers and Embedded Systems", 3.0, "Theory", "5th", dept, "CSE-3521");
+        add("CSE-3523", "Microprocessors, Microcontrollers and Embedded Systems", 3.0, "Theory", "5th", dept, "CSE-2323");
         add("CSE-3524", "Microprocessors, Microcontrollers and Embedded Systems Lab", 1.0, "Lab", "5th", dept, "CSE-2324");
         add("CSE-3527", "Compiler", 3.0, "Theory", "5th", dept, "CSE-2427");
         add("CSE-3528", "Compiler Lab", 1.0, "Lab", "5th", dept, "CSE-2322");
         add("CSE-3529", "Systems Analysis and Design", 3.0, "Theory", "5th", dept, "");
-        add("CSE-3532", "Tools and Technologies for Internet Programming", 2.0, "Lab", "5th", dept, "CSE-2423");
+        add("CSE-3532", "Tools and Technologies for Internet Programming", 2.0, "Lab", "5th", dept, "CSE-2340");
         add("EEE-2421", "Electrical Drive and Instrumentation", 2.0, "Theory", "5th", dept, "EEE-1221");
         add("EEE-2422", "Electrical Drive and Instrumentation Lab", 1.0, "Lab", "5th", dept, "EEE-1222");
         add("URED-3503", "Introduction to Political Thoughts and Social Behavior", 1.0, "Theory", "5th", dept, "");
@@ -120,14 +120,14 @@ public class CourseService {
         add("CSE-3633", "Computer Networks", 3.0, "Theory", "7th", dept, "CSE-3525");
         add("CSE-3634", "Computer Networks Lab", 1.5, "Lab", "7th", dept, "CSE-3525");
         add("CSE-4741", "Computer Graphics", 3.0, "Theory", "7th", dept, "MATH-2307");
-        add("CSE-4742", "Computer Graphics Lab", 1.0, "Lab", "7th", dept, "");
+        add("CSE-4742", "Computer Graphics Lab", 1.0, "Lab", "7th", dept, "CSE-2322");
         add("CSE-4877", "Machine Learning Data Mining", 3.0, "Theory", "7th", dept, "CSE-3635");
         add("CSE-4878", "Machine Learning And Data Mining Lab", 1.0, "Lab", "7th", dept, "CSE-3636");
         add("CSE-4745", "Numerical Methods", 2.0, "Theory", "7th", dept, "CSE-1121");
         add("CSE-4746", "Numerical Methods Lab", 1.0, "Lab", "7th", dept, "CSE-1122");
-        add("CSE-4747", "Mathematical Analysis for Computer Science", 3.0, "Theory", "7th", dept, "CSE-1223, CSE-2421, STAT-2311");
+        add("CSE-4747", "Mathematical Analysis for Computer Science", 3.0, "Theory", "7th", dept, "STAT-2311");
         add("CSE-4750", "Technical Writing and Presentation", 1.0, "Theory", "7th", dept, "");
-        add("CSE-4708", "Field Work", 1.0, "Lab", "7th", dept, "Core Courses of CSE");
+        add("CSE-4708", "Field Work", 1.0, "Lab", "7th", dept, "");
         add("URIH-4701", "A Survey of Islamic History and Culture", 1.0, "Theory", "7th", dept, "");
 
         // 8th Semester (CSE-54 Batch - Core & Offered Courses)

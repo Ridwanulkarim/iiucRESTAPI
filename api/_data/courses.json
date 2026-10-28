@@ -183,7 +183,7 @@
     "semesterOffered": "2nd",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "PHY-1101",
+    "prerequisite": "",
     "courseId": 116
   },
   {
@@ -199,7 +199,7 @@
   },
   {
     "courseCode": "GEED-1201",
-    "courseTitle": "Basic Principles of Islam (‘Aqidah+‘Ibadah)",
+    "courseTitle": "Basic Principles of Islam (\u2018Aqidah+\u2018Ibadah)",
     "courseCredit": 2,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -271,7 +271,7 @@
     "semesterOffered": "3rd",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "MATH-1107",
+    "prerequisite": "MATH-1207",
     "courseId": 124
   },
   {
@@ -458,7 +458,7 @@
     "semesterOffered": "5th",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "CSE-3521",
+    "prerequisite": "CSE-2323",
     "courseId": 141
   },
   {
@@ -513,7 +513,7 @@
     "semesterOffered": "5th",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "CSE-2423",
+    "prerequisite": "CSE-2340",
     "courseId": 146
   },
   {
@@ -733,7 +733,7 @@
     "semesterOffered": "7th",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "",
+    "prerequisite": "CSE-2322",
     "courseId": 166
   },
   {
@@ -788,7 +788,7 @@
     "semesterOffered": "7th",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "CSE-1223, CSE-2421, STAT-2311",
+    "prerequisite": "STAT-2311",
     "courseId": 171
   },
   {
@@ -810,7 +810,7 @@
     "semesterOffered": "7th",
     "deptName": "Computer Science and Engineering (CSE)",
     "instructor": "Faculty Member",
-    "prerequisite": "Core Courses of CSE",
+    "prerequisite": "",
     "courseId": 173
   },
   {
@@ -1552,7 +1552,7 @@
   },
   {
     "courseCode": "URED-1201",
-    "courseTitle": "Basic Principles of Islam (‘Aqeedah+ ‘Ibadah)",
+    "courseTitle": "Basic Principles of Islam (\u2018Aqeedah+ \u2018Ibadah)",
     "courseCredit": 2,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -1651,7 +1651,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Science of Qur’an and Hadith",
+    "courseTitle": "Science of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -2872,7 +2872,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -3884,7 +3884,7 @@
   },
   {
     "courseCode": "URED-1201",
-    "courseTitle": "Basic Principles of Islam (‘Aqidah+’Ibadah)",
+    "courseTitle": "Basic Principles of Islam (\u2018Aqidah+\u2019Ibadah)",
     "courseCredit": 2,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -3983,7 +3983,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -6051,7 +6051,7 @@
   },
   {
     "courseCode": "URED-1201",
-    "courseTitle": "Basic Principles of Islam (‘Aqidah and ’Ibadah)",
+    "courseTitle": "Basic Principles of Islam (\u2018Aqidah and \u2019Ibadah)",
     "courseCredit": 2,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -6271,7 +6271,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -7052,7 +7052,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -7613,7 +7613,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -7657,7 +7657,7 @@
   },
   {
     "courseCode": "ALL-2415",
-    "courseTitle": "Rhetoric 1 (‘Ilmul Ma ‘aani)",
+    "courseTitle": "Rhetoric 1 (\u2018Ilmul Ma \u2018aani)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "4th",
@@ -7723,7 +7723,7 @@
   },
   {
     "courseCode": "ALL-3518",
-    "courseTitle": "Rhetoric 2 (‘Ilmul Bayan and ‘IlmulBadi)",
+    "courseTitle": "Rhetoric 2 (\u2018Ilmul Bayan and \u2018IlmulBadi)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "5th",
@@ -8570,7 +8570,7 @@
   },
   {
     "courseCode": "FSC-1105",
-    "courseTitle": "Science of Intonation & It’s Application",
+    "courseTitle": "Science of Intonation & It\u2019s Application",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "1st",
@@ -8691,7 +8691,7 @@
   },
   {
     "courseCode": "FSC-1103",
-    "courseTitle": "Introduction to Sciences of the Qur’an (Al Madkhal Ila Ulum al Qur’an)",
+    "courseTitle": "Introduction to Sciences of the Qur\u2019an (Al Madkhal Ila Ulum al Qur\u2019an)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -8724,7 +8724,7 @@
   },
   {
     "courseCode": "FSC-1209",
-    "courseTitle": "Meaning of the Qur’anic Text-I",
+    "courseTitle": "Meaning of the Qur\u2019anic Text-I",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -8801,7 +8801,7 @@
   },
   {
     "courseCode": "FSC-2312",
-    "courseTitle": "Meaning of the Qur’anic Text-II",
+    "courseTitle": "Meaning of the Qur\u2019anic Text-II",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -8823,7 +8823,7 @@
   },
   {
     "courseCode": "FSC-2420",
-    "courseTitle": "Qur’anic Rhetoric",
+    "courseTitle": "Qur\u2019anic Rhetoric",
     "courseCredit": 2,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -9021,7 +9021,7 @@
   },
   {
     "courseCode": "FSC-2314",
-    "courseTitle": "Law of Inheritance (I’lm al- Mawarith)",
+    "courseTitle": "Law of Inheritance (I\u2019lm al- Mawarith)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "5th",
@@ -9032,7 +9032,7 @@
   },
   {
     "courseCode": "FSC-2417",
-    "courseTitle": "Jurisprudence of Transactions (Fiqh al Mu’amalaat)",
+    "courseTitle": "Jurisprudence of Transactions (Fiqh al Mu\u2019amalaat)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "5th",
@@ -9076,7 +9076,7 @@
   },
   {
     "courseCode": "DIM-3501",
-    "courseTitle": "History of Islamic Call and Callers (Tarikh al-Da‘wah wa-al-Duat)",
+    "courseTitle": "History of Islamic Call and Callers (Tarikh al-Da\u2018wah wa-al-Duat)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "6th",
@@ -9087,7 +9087,7 @@
   },
   {
     "courseCode": "DIM-3502",
-    "courseTitle": "Principles of Ima’n (Usul al Ima’n)",
+    "courseTitle": "Principles of Ima\u2019n (Usul al Ima\u2019n)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "6th",
@@ -9098,7 +9098,7 @@
   },
   {
     "courseCode": "DIM-3503",
-    "courseTitle": "Characteristics of Caller (Saqafah al Da’iyah)",
+    "courseTitle": "Characteristics of Caller (Saqafah al Da\u2019iyah)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "6th",
@@ -9109,7 +9109,7 @@
   },
   {
     "courseCode": "DIM-3504",
-    "courseTitle": "Call and Information Media (Al Da’wah wa Wasail al I’lam)",
+    "courseTitle": "Call and Information Media (Al Da\u2019wah wa Wasail al I\u2019lam)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "6th",
@@ -9164,7 +9164,7 @@
   },
   {
     "courseCode": "STAT-3503",
-    "courseTitle": "Statistics for Research in Shari’ah Studies",
+    "courseTitle": "Statistics for Research in Shari\u2019ah Studies",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "6th",
@@ -9175,7 +9175,7 @@
   },
   {
     "courseCode": "DIM-3606",
-    "courseTitle": "Methodology of Islamic Call and its Techniques (Manahij al-Da‘wah wa-Asalibuha)",
+    "courseTitle": "Methodology of Islamic Call and its Techniques (Manahij al-Da\u2018wah wa-Asalibuha)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "7th",
@@ -9197,7 +9197,7 @@
   },
   {
     "courseCode": "DIM-3608",
-    "courseTitle": "Studies on Islamic Call in the Holy Qur’an (Dirasat al Dawi’ah Fi al Qur’an)",
+    "courseTitle": "Studies on Islamic Call in the Holy Qur\u2019an (Dirasat al Dawi\u2019ah Fi al Qur\u2019an)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "7th",
@@ -9208,7 +9208,7 @@
   },
   {
     "courseCode": "DIM-4709",
-    "courseTitle": "Islam and Contemporary Civilization (Al Hadarah al Islamiyah wa al Hadarah al Mua’sarah)",
+    "courseTitle": "Islam and Contemporary Civilization (Al Hadarah al Islamiyah wa al Hadarah al Mua\u2019sarah)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "7th",
@@ -9230,7 +9230,7 @@
   },
   {
     "courseCode": "DIM-4711",
-    "courseTitle": "Inimitability of the Qur’an (I’jaz al-Qur‘an)",
+    "courseTitle": "Inimitability of the Qur\u2019an (I\u2019jaz al-Qur\u2018an)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "7th",
@@ -9241,7 +9241,7 @@
   },
   {
     "courseCode": "DIM-4712",
-    "courseTitle": "Challenges of Contemporary Thoughts (Tahddiyat al Tayyarah al Ma’asirah)",
+    "courseTitle": "Challenges of Contemporary Thoughts (Tahddiyat al Tayyarah al Ma\u2019asirah)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "7th",
@@ -9274,7 +9274,7 @@
   },
   {
     "courseCode": "DIM-4813",
-    "courseTitle": "Dealings with the opponent of Islamic Call (Al Ta’mmul Maa Mukhalifi al Da’wah)",
+    "courseTitle": "Dealings with the opponent of Islamic Call (Al Ta\u2019mmul Maa Mukhalifi al Da\u2019wah)",
     "courseCredit": 3,
     "courseType": "Theory",
     "semesterOffered": "8th",
@@ -11199,7 +11199,7 @@
   },
   {
     "courseCode": "URED-1201",
-    "courseTitle": "Basic Principles of Islam (‘Aqidah+‘Ibadah)",
+    "courseTitle": "Basic Principles of Islam (\u2018Aqidah+\u2018Ibadah)",
     "courseCredit": 2,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -11243,7 +11243,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
@@ -11892,7 +11892,7 @@
   },
   {
     "courseCode": "URED-1201",
-    "courseTitle": "Basic Principles of Islam (‘Aqidah+’Ibadah)",
+    "courseTitle": "Basic Principles of Islam (\u2018Aqidah+\u2019Ibadah)",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "2nd",
@@ -11958,7 +11958,7 @@
   },
   {
     "courseCode": "URED-2302",
-    "courseTitle": "Sciences of Qur’an and Hadith",
+    "courseTitle": "Sciences of Qur\u2019an and Hadith",
     "courseCredit": 1,
     "courseType": "Theory",
     "semesterOffered": "3rd",
